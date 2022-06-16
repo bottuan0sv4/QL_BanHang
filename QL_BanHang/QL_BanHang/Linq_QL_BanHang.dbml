@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLy_BanHang" Class="Linq_QL_BanHangDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HI\SQLEXPRESS;Initial Catalog=QLy_BanHang;Integrated Security=True" SettingsObjectName="QL_BanHang.Properties.Settings" SettingsPropertyName="QLy_BanHangConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CT_HDNhap" Member="CT_HDNhaps">
+    <Type Name="CT_HDNhap">
+      <Column Name="ID_CTHDN" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="makho" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="masp" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="soluong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="chietkhau" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="thanhtien" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="ID_SP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Kho" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_HDNhap" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="HDNhap_CT_HDNhap" Member="HDNhap" ThisKey="ID_HDNhap" OtherKey="ID_HDNhap" Type="HDNhap" IsForeignKey="true" />
+      <Association Name="Kho_CT_HDNhap" Member="Kho" ThisKey="ID_Kho" OtherKey="ID_Kho" Type="Kho" IsForeignKey="true" />
+      <Association Name="SanPham_CT_HDNhap" Member="SanPham" ThisKey="ID_SP" OtherKey="ID_SP" Type="SanPham" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TonKho" Member="TonKhos">
+    <Type Name="TonKho">
+      <Column Name="ID_Kho" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_SP" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="soluong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nam" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="Kho_TonKho" Member="Kho" ThisKey="ID_Kho" OtherKey="ID_Kho" Type="Kho" IsForeignKey="true" />
+      <Association Name="SanPham_TonKho" Member="SanPham" ThisKey="ID_SP" OtherKey="ID_SP" Type="SanPham" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CT_HDXuat" Member="CT_HDXuats">
+    <Type Name="CT_HDXuat">
+      <Column Name="ID_CTHDX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="makho" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="masp" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="soluong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="chietkhau" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="thanhtien" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="ID_SP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Kho" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_HDXuat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="HDXuat_CT_HDXuat" Member="HDXuat" ThisKey="ID_HDXuat" OtherKey="ID_HDXuat" Type="HDXuat" IsForeignKey="true" />
+      <Association Name="Kho_CT_HDXuat" Member="Kho" ThisKey="ID_Kho" OtherKey="ID_Kho" Type="Kho" IsForeignKey="true" />
+      <Association Name="SanPham_CT_HDXuat" Member="SanPham" ThisKey="ID_SP" OtherKey="ID_SP" Type="SanPham" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HDNhap" Member="HDNhaps">
+    <Type Name="HDNhap">
+      <Column Name="ID_HDNhap" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sophieunhap" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ngaytao" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="ID_NCC" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="mancc" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="HDNhap_CT_HDNhap" Member="CT_HDNhaps" ThisKey="ID_HDNhap" OtherKey="ID_HDNhap" Type="CT_HDNhap" />
+      <Association Name="NCC_HDNhap" Member="NCC" ThisKey="ID_NCC" OtherKey="ID_NCC" Type="NCC" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HDXuat" Member="HDXuats">
+    <Type Name="HDXuat">
+      <Column Name="ID_HDXuat" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sophieuxuat" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ngaytao" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="ID_KH" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="makh" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="HDXuat_CT_HDXuat" Member="CT_HDXuats" ThisKey="ID_HDXuat" OtherKey="ID_HDXuat" Type="CT_HDXuat" />
+      <Association Name="KH_HDXuat" Member="KH" ThisKey="ID_KH" OtherKey="ID_KH" Type="KH" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KH" Member="KHs">
+    <Type Name="KH">
+      <Column Name="ID_KH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="makh" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="tenkh" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="diachi" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="sdt" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="gioitinh" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="masothue" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="KH_HDXuat" Member="HDXuats" ThisKey="ID_KH" OtherKey="ID_KH" Type="HDXuat" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Kho" Member="Khos">
+    <Type Name="Kho">
+      <Column Name="ID_Kho" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="makho" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="tenkho" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Kho_CT_HDNhap" Member="CT_HDNhaps" ThisKey="ID_Kho" OtherKey="ID_Kho" Type="CT_HDNhap" />
+      <Association Name="Kho_TonKho" Member="TonKhos" ThisKey="ID_Kho" OtherKey="ID_Kho" Type="TonKho" />
+      <Association Name="Kho_CT_HDXuat" Member="CT_HDXuats" ThisKey="ID_Kho" OtherKey="ID_Kho" Type="CT_HDXuat" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NCC" Member="NCCs">
+    <Type Name="NCC">
+      <Column Name="ID_NCC" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="mancc" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="tenncc" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="diachi" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="sdt" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="NCC_HDNhap" Member="HDNhaps" ThisKey="ID_NCC" OtherKey="ID_NCC" Type="HDNhap" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SanPham" Member="SanPhams">
+    <Type Name="SanPham">
+      <Column Name="ID_SP" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="masp" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="tensp" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="donvi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="dongia" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="ngaytao" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="SanPham_CT_HDNhap" Member="CT_HDNhaps" ThisKey="ID_SP" OtherKey="ID_SP" Type="CT_HDNhap" />
+      <Association Name="SanPham_TonKho" Member="TonKhos" ThisKey="ID_SP" OtherKey="ID_SP" Type="TonKho" />
+      <Association Name="SanPham_CT_HDXuat" Member="CT_HDXuats" ThisKey="ID_SP" OtherKey="ID_SP" Type="CT_HDXuat" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaiKhoan" Member="TaiKhoans">
+    <Type Name="TaiKhoan">
+      <Column Name="ID_TK" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="hoten" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="diachi" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ngaysinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="sdt" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="gioitinh" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
