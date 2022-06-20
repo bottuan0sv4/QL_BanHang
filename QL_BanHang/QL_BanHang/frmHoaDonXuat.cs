@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraReports.UI;
 using QL_BanHang.Class;
-using Syncfusion.XlsIO;
 
 namespace QL_BanHang
 {
@@ -102,9 +94,6 @@ namespace QL_BanHang
             gc_CTHDXuat.RefreshDataSource();
         }
 
-        
-      
-
         private void bt_InHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             InHoaDonXuat prt = new InHoaDonXuat();
@@ -133,6 +122,5 @@ namespace QL_BanHang
             prt.DataSource = listCT_HDNhaps.ToList();
             prt.ShowPreview();
         }
-    }
-    
+    }    
 }

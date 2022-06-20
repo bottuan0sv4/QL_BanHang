@@ -45,6 +45,7 @@ namespace QL_BanHang
             this.date_NgaySinh = new DevExpress.XtraEditors.DateEdit();
             this.bt_Huy = new DevExpress.XtraEditors.SimpleButton();
             this.bt_CapNhat = new DevExpress.XtraEditors.SimpleButton();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Username.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_HoTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).BeginInit();
@@ -122,6 +123,8 @@ namespace QL_BanHang
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(297, 22);
             this.txtSDT.TabIndex = 9;
+            this.txtSDT.TextChanged += new System.EventHandler(this.txtSDT_TextChanged);
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // labelControl5
             // 
@@ -177,6 +180,8 @@ namespace QL_BanHang
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.date_NgaySinh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.date_NgaySinh.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.date_NgaySinh.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.date_NgaySinh.Size = new System.Drawing.Size(133, 22);
             this.date_NgaySinh.TabIndex = 19;
             // 
@@ -202,11 +207,20 @@ namespace QL_BanHang
             this.bt_CapNhat.Text = "Cập Nhật";
             this.bt_CapNhat.Click += new System.EventHandler(this.bt_CapNhat_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 183);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 17);
+            this.label1.TabIndex = 21;
+            // 
             // FrmCapNhatTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(845, 214);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.bt_Huy);
             this.Controls.Add(this.date_NgaySinh);
             this.Controls.Add(this.txt_Pass);
@@ -224,6 +238,7 @@ namespace QL_BanHang
             this.Controls.Add(this.txt_Username);
             this.Controls.Add(this.labelControl1);
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "FrmCapNhatTaiKhoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cập Nhật Tài Khoản";
@@ -259,5 +274,6 @@ namespace QL_BanHang
         private DevExpress.XtraEditors.DateEdit date_NgaySinh;
         private DevExpress.XtraEditors.SimpleButton bt_CapNhat;
         private DevExpress.XtraEditors.SimpleButton bt_Huy;
+        private System.Windows.Forms.Label label1;
     }
 }

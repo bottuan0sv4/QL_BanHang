@@ -110,7 +110,7 @@ namespace QL_BanHang
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControlTop.Size = new System.Drawing.Size(1067, 30);
             // 
             // barDockControlBottom
@@ -119,7 +119,7 @@ namespace QL_BanHang
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 554);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControlBottom.Size = new System.Drawing.Size(1067, 0);
             // 
             // barDockControlLeft
@@ -128,7 +128,7 @@ namespace QL_BanHang
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 524);
             // 
             // barDockControlRight
@@ -137,16 +137,16 @@ namespace QL_BanHang
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1067, 30);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 524);
             // 
             // gc_SanPham
             // 
             this.gc_SanPham.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_SanPham.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gc_SanPham.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gc_SanPham.Location = new System.Drawing.Point(0, 30);
             this.gc_SanPham.MainView = this.gv_SanPham;
-            this.gc_SanPham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gc_SanPham.Margin = new System.Windows.Forms.Padding(4);
             this.gc_SanPham.MenuManager = this.barManager1;
             this.gc_SanPham.Name = "gc_SanPham";
             this.gc_SanPham.Size = new System.Drawing.Size(1067, 524);
@@ -167,6 +167,7 @@ namespace QL_BanHang
             this.gv_SanPham.GridControl = this.gc_SanPham;
             this.gv_SanPham.Name = "gv_SanPham";
             this.gv_SanPham.OptionsBehavior.Editable = false;
+            this.gv_SanPham.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn1
             // 
@@ -174,8 +175,6 @@ namespace QL_BanHang
             this.gridColumn1.FieldName = "ID_SP";
             this.gridColumn1.MinWidth = 27;
             this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
             this.gridColumn1.Width = 100;
             // 
             // gridColumn7
@@ -185,7 +184,7 @@ namespace QL_BanHang
             this.gridColumn7.MinWidth = 27;
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 1;
+            this.gridColumn7.VisibleIndex = 0;
             this.gridColumn7.Width = 100;
             // 
             // gridColumn2
@@ -195,7 +194,7 @@ namespace QL_BanHang
             this.gridColumn2.MinWidth = 27;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 2;
+            this.gridColumn2.VisibleIndex = 1;
             this.gridColumn2.Width = 100;
             // 
             // gridColumn3
@@ -205,7 +204,7 @@ namespace QL_BanHang
             this.gridColumn3.MinWidth = 27;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 3;
+            this.gridColumn3.VisibleIndex = 2;
             this.gridColumn3.Width = 100;
             // 
             // gridColumn4
@@ -217,17 +216,19 @@ namespace QL_BanHang
             this.gridColumn4.MinWidth = 27;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 4;
+            this.gridColumn4.VisibleIndex = 3;
             this.gridColumn4.Width = 100;
             // 
             // gridColumn5
             // 
             this.gridColumn5.Caption = "Ngày Tạo";
+            this.gridColumn5.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.gridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn5.FieldName = "ngaytao";
             this.gridColumn5.MinWidth = 27;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 5;
+            this.gridColumn5.VisibleIndex = 4;
             this.gridColumn5.Width = 100;
             // 
             // frmSanPham
@@ -240,7 +241,7 @@ namespace QL_BanHang
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmSanPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Sản Phẩm";

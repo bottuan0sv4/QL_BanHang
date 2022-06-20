@@ -43,7 +43,7 @@ namespace QL_BanHang
             // 
             this.bt_Huy.ImageOptions.SvgImage = global::QL_BanHang.Properties.Resources.paymentunpaid;
             this.bt_Huy.Location = new System.Drawing.Point(209, 79);
-            this.bt_Huy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bt_Huy.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Huy.Name = "bt_Huy";
             this.bt_Huy.Size = new System.Drawing.Size(125, 46);
             this.bt_Huy.TabIndex = 62;
@@ -53,7 +53,7 @@ namespace QL_BanHang
             // txt_TenKho
             // 
             this.txt_TenKho.Location = new System.Drawing.Point(105, 47);
-            this.txt_TenKho.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_TenKho.Margin = new System.Windows.Forms.Padding(4);
             this.txt_TenKho.Name = "txt_TenKho";
             this.txt_TenKho.Size = new System.Drawing.Size(229, 22);
             this.txt_TenKho.TabIndex = 61;
@@ -61,7 +61,7 @@ namespace QL_BanHang
             // labelControl7
             // 
             this.labelControl7.Location = new System.Drawing.Point(13, 50);
-            this.labelControl7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl7.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(47, 16);
             this.labelControl7.TabIndex = 60;
@@ -70,7 +70,7 @@ namespace QL_BanHang
             // txt_MaKho
             // 
             this.txt_MaKho.Location = new System.Drawing.Point(105, 15);
-            this.txt_MaKho.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_MaKho.Margin = new System.Windows.Forms.Padding(4);
             this.txt_MaKho.Name = "txt_MaKho";
             this.txt_MaKho.Size = new System.Drawing.Size(229, 22);
             this.txt_MaKho.TabIndex = 54;
@@ -78,7 +78,7 @@ namespace QL_BanHang
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(13, 22);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(42, 16);
             this.labelControl1.TabIndex = 53;
@@ -106,7 +106,8 @@ namespace QL_BanHang
             this.Controls.Add(this.bt_CapNhat);
             this.Controls.Add(this.txt_MaKho);
             this.Controls.Add(this.labelControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "frmCapNhatKho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cập Nhật Kho";

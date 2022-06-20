@@ -31,11 +31,14 @@ namespace QL_BanHang
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChu));
-            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
             this.navButton2 = new DevExpress.XtraBars.Navigation.NavButton();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.bt_dang_xuat = new DevExpress.XtraBars.BarButtonItem();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.bt_dangxuat_ = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.bt_TrangChu = new DevExpress.XtraBars.BarButtonItem();
             this.bt_KhachHang = new DevExpress.XtraBars.BarButtonItem();
             this.bt_SanPham = new DevExpress.XtraBars.BarButtonItem();
@@ -51,6 +54,9 @@ namespace QL_BanHang
             this.bt_TonKho = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.btTonKho = new DevExpress.XtraBars.BarButtonItem();
+            this.bt_dangxuat = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.btdangxuat = new DevExpress.XtraBars.BarButtonItem();
             this.p_TrangChu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.p_DanhMuc = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -70,6 +76,8 @@ namespace QL_BanHang
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.bt_thoat = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -82,11 +90,21 @@ namespace QL_BanHang
             // 
             // ribbonStatusBar
             // 
+            this.ribbonStatusBar.ItemLinks.Add(this.bt_dang_xuat);
+            this.ribbonStatusBar.ItemLinks.Add(this.bt_thoat);
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 583);
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(701, 30);
+            // 
+            // bt_dang_xuat
+            // 
+            this.bt_dang_xuat.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.bt_dang_xuat.Caption = "Đăng Xuất";
+            this.bt_dang_xuat.Id = 24;
+            this.bt_dang_xuat.Name = "bt_dang_xuat";
+            this.bt_dang_xuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_dang_xuat_ItemClick);
             // 
             // ribbon
             // 
@@ -94,6 +112,8 @@ namespace QL_BanHang
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
             this.ribbon.SearchEditItem,
+            this.bt_dangxuat_,
+            this.barButtonItem4,
             this.bt_TrangChu,
             this.bt_KhachHang,
             this.bt_SanPham,
@@ -108,10 +128,16 @@ namespace QL_BanHang
             this.bt_TKXuat,
             this.bt_TonKho,
             this.ribbonGalleryBarItem1,
-            this.btTonKho});
+            this.btTonKho,
+            this.bt_dangxuat,
+            this.barButtonItem3,
+            this.btdangxuat,
+            this.bt_dang_xuat,
+            this.barButtonItem5,
+            this.bt_thoat});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ribbon.MaxItemId = 19;
+            this.ribbon.MaxItemId = 27;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.p_TrangChu,
@@ -120,6 +146,19 @@ namespace QL_BanHang
             this.p_BaoCao});
             this.ribbon.Size = new System.Drawing.Size(701, 193);
             this.ribbon.StatusBar = this.ribbonStatusBar;
+            // 
+            // bt_dangxuat_
+            // 
+            this.bt_dangxuat_.Caption = "Đăng Xuất";
+            this.bt_dangxuat_.Id = 23;
+            this.bt_dangxuat_.Name = "bt_dangxuat_";
+            this.bt_dangxuat_.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_dangxuat__ItemClick);
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Đăng Xuất";
+            this.barButtonItem4.Id = 21;
+            this.barButtonItem4.Name = "barButtonItem4";
             // 
             // bt_TrangChu
             // 
@@ -233,6 +272,24 @@ namespace QL_BanHang
             this.btTonKho.Name = "btTonKho";
             this.btTonKho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btTonKho_ItemClick);
             // 
+            // bt_dangxuat
+            // 
+            this.bt_dangxuat.Caption = "Đăng Xuất";
+            this.bt_dangxuat.Id = 19;
+            this.bt_dangxuat.Name = "bt_dangxuat";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "barButtonItem3";
+            this.barButtonItem3.Id = 20;
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // btdangxuat
+            // 
+            this.btdangxuat.Caption = "Đăng Xuất";
+            this.btdangxuat.Id = 22;
+            this.btdangxuat.Name = "btdangxuat";
+            // 
             // p_TrangChu
             // 
             this.p_TrangChu.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -326,15 +383,15 @@ namespace QL_BanHang
             // 
             // 
             this.tileNavCategory2.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement3.Text = "tileNavCategory3";
-            this.tileNavCategory2.Tile.Elements.Add(tileItemElement3);
+            tileItemElement1.Text = "tileNavCategory3";
+            this.tileNavCategory2.Tile.Elements.Add(tileItemElement1);
             this.tileNavCategory2.Tile.Name = "tileBarItem2";
             // 
             // tileBarItem1
             // 
             this.tileBarItem1.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement4.Text = "tileNavCategory3";
-            this.tileBarItem1.Elements.Add(tileItemElement4);
+            tileItemElement2.Text = "tileNavCategory3";
+            this.tileBarItem1.Elements.Add(tileItemElement2);
             this.tileBarItem1.Name = "tileBarItem1";
             // 
             // ribbonPage4
@@ -354,6 +411,20 @@ namespace QL_BanHang
             this.barButtonItem2.ImageOptions.LargeImage = global::QL_BanHang.Properties.Resources.boproductgroup_32x32;
             this.barButtonItem2.Name = "barButtonItem2";
             // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "barButtonItem5";
+            this.barButtonItem5.Id = 25;
+            this.barButtonItem5.Name = "barButtonItem5";
+            // 
+            // bt_thoat
+            // 
+            this.bt_thoat.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.bt_thoat.Caption = "Thoát";
+            this.bt_thoat.Id = 26;
+            this.bt_thoat.Name = "bt_thoat";
+            this.bt_thoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_thoat_ItemClick);
+            // 
             // TrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -369,6 +440,7 @@ namespace QL_BanHang
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Phần Mềm Quản Lý Bán Hàng";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TrangChu_FormClosed);
             this.Load += new System.EventHandler(this.TrangChu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
@@ -417,5 +489,13 @@ namespace QL_BanHang
         private DevExpress.XtraBars.BarButtonItem btTonKho;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem bt_dangxuat;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem bt_dangxuat_;
+        private DevExpress.XtraBars.BarButtonItem btdangxuat;
+        private DevExpress.XtraBars.BarButtonItem bt_dang_xuat;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem bt_thoat;
     }
 }

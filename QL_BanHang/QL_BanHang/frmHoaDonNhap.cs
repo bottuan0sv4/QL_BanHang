@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraReports.UI;
 using QL_BanHang.Class;
-using Syncfusion.XlsIO;
 
 namespace QL_BanHang
 {
@@ -44,8 +36,8 @@ namespace QL_BanHang
         }
         private void loaddataCTHDN()
         {
-        }
 
+        }
 
         private void frmHoaDonNhap_Load(object sender, EventArgs e)
         {
@@ -67,6 +59,7 @@ namespace QL_BanHang
             f.hdNhap = gv_HDNhap.GetFocusedRow() as clsHDNhap;
             f.ShowDialog();
             dataload();
+            
         }
 
         private void bt_Xoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -107,12 +100,7 @@ namespace QL_BanHang
                         }).OrderBy(x => x.ID_HDNhap);
                 gc_CTHDNhap.DataSource = list;
                 gc_CTHDNhap.RefreshDataSource();
-
-           
-            
         }
-
-
 
         private void btsua_click(object sender, EventArgs e)
         {
@@ -167,8 +155,7 @@ namespace QL_BanHang
                                   }).OrderBy(x => x.ID_HDNhap);
 
             prt.DataSource = listCT_HDNhaps.ToList();
-            prt.ShowPreview();
-           
+            prt.ShowPreview(); 
         }
     }
 }

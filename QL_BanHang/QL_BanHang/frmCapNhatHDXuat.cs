@@ -1,18 +1,11 @@
 ﻿using DevExpress.DataProcessing;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraGrid.Views.Base;
-using DevExpress.XtraGrid.Columns;
 using QL_BanHang.Class;
-using DevExpress.XtraGrid.Views.BandedGrid;
+using System.Drawing;
 
 namespace QL_BanHang
 {
@@ -51,24 +44,39 @@ namespace QL_BanHang
         {
             if (themmoi)
             {
-                lstchitiet.Add(new clsCTHDXuat()
+                try
                 {
-                    ID_Kho = (from p in db.Khos
-                              where cbMaKho.Text == p.makho
-                              select p.ID_Kho).FirstOrDefault(),
-                    makho = cbMaKho.Text,
-                    tenkho = txt_TenKho.Text,
-                    ID_SP = (from p in db.SanPhams
-                             where cbMaSP.Text == p.masp
-                             select p.ID_SP).FirstOrDefault(),
-                    masp = cbMaSP.Text,
-                    tensp = txt_TenSP.Text,
-                    soluong = Convert.ToInt32(txt_SoLuong.EditValue),
-                    dongia = Convert.ToDouble(txt_DonGia.EditValue),
-                    chietkhau = Convert.ToDouble(txt_ChietKhau.EditValue),
-                    thanhtien = ((Convert.ToDouble(txt_DonGia.EditValue) * Convert.ToInt32(txt_SoLuong.EditValue)) - ((Convert.ToDouble(txt_ChietKhau.EditValue) * Convert.ToDouble(txt_DonGia.EditValue) * Convert.ToInt32(txt_SoLuong.EditValue)) / 100)) + (((Convert.ToDouble(txt_DonGia.EditValue) * Convert.ToInt32(txt_SoLuong.EditValue)) - ((Convert.ToDouble(txt_ChietKhau.EditValue) * Convert.ToDouble(txt_DonGia.EditValue) * Convert.ToInt32(txt_SoLuong.EditValue)) / 100)) * Convert.ToDouble(txt_Thue.EditValue) / 100),
-                    masothue = Convert.ToDouble(txt_Thue.EditValue)
-                });
+                    lstchitiet.Add(new clsCTHDXuat()
+                    {
+                        ID_Kho = (from p in db.Khos
+                                  where cbMaKho.Text == p.makho
+                                  select p.ID_Kho).FirstOrDefault(),
+                        makho = cbMaKho.Text,
+                        tenkho = txt_TenKho.Text,
+                        ID_SP = (from p in db.SanPhams
+                                 where cbMaSP.Text == p.masp
+                                 select p.ID_SP).FirstOrDefault(),
+                        masp = cbMaSP.Text,
+                        tensp = txt_TenSP.Text,
+                        soluong = Convert.ToInt32(txt_SoLuong.EditValue),
+                        dongia = Convert.ToDouble(txt_DonGia.EditValue),
+                        chietkhau = Convert.ToDouble(txt_ChietKhau.EditValue),
+                        thanhtien = ((Convert.ToDouble(txt_DonGia.EditValue) * Convert.ToInt32(txt_SoLuong.EditValue)) - ((Convert.ToDouble(txt_ChietKhau.EditValue) * Convert.ToDouble(txt_DonGia.EditValue) * Convert.ToInt32(txt_SoLuong.EditValue)) / 100)) + (((Convert.ToDouble(txt_DonGia.EditValue) * Convert.ToInt32(txt_SoLuong.EditValue)) - ((Convert.ToDouble(txt_ChietKhau.EditValue) * Convert.ToDouble(txt_DonGia.EditValue) * Convert.ToInt32(txt_SoLuong.EditValue)) / 100)) * Convert.ToDouble(txt_Thue.EditValue) / 100),
+                        masothue = Convert.ToDouble(txt_Thue.EditValue)
+                    });
+                    cbMaKho.ResetText();
+                    cbMaSP.ResetText();
+                    txt_SoLuong.ResetText();
+                    txt_ChietKhau.ResetText();
+                    txt_TenKho.ResetText();
+                    txt_TenSP.ResetText();
+                    txt_DonGia.ResetText();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Xin hãy nhập dữ liệu!", "Error");
+                }
+                
             }
             else
             {
@@ -86,48 +94,10 @@ namespace QL_BanHang
 
         private void bt_Luu_HD_Click(object sender, EventArgs e)
         {
-            if (themmoi)
+            try
             {
-                hdx.sophieuxuat = txt_SoPhieuXuat.Text;
-                hdx.makh = cbMaKH.Text;
-                hdx.ngaytao = (DateTime)date_NgayTao.DateTime;
-                var list = (from p in db.KHs
-                            where cbMaKH.Text == p.makh
-                            select p.ID_KH).SingleOrDefault();
-                hdx.ID_KH = list;
-
-
-                foreach (var item in lstchitiet)
+                if (themmoi)
                 {
-                    CT_HDXuat ct = new CT_HDXuat();
-                    ct.makho = item.makho;
-                    ct.masp = item.masp;
-                    ct.soluong = item.soluong;
-                    ct.chietkhau = item.chietkhau;
-                    ct.thanhtien = item.thanhtien;
-                    
-
-                    ct.ID_Kho = item.ID_Kho;
-
-                    ct.ID_SP = item.ID_SP;
-
-                    ct.ID_HDXuat = item.ID_HDXuat;
-
-
-                    hdx.CT_HDXuats.Add(ct);
-                }
-
-
-                db.HDXuats.InsertOnSubmit(hdx);
-                db.SubmitChanges();
-                frmHoaDonXuat_Load(sender, e);
-                this.DialogResult = DialogResult.Cancel;
-            }
-            else
-            {
-                HDXuat hdxs = (from ds in db.HDXuats where ds.ID_HDXuat == hdXuat.ID_HDXuat select ds).FirstOrDefault();
-
-                hdx = db.HDXuats.Where(s => s.sophieuxuat == txt_SoPhieuXuat.Text).FirstOrDefault();
                     hdx.sophieuxuat = txt_SoPhieuXuat.Text;
                     hdx.makh = cbMaKH.Text;
                     hdx.ngaytao = (DateTime)date_NgayTao.DateTime;
@@ -135,42 +105,89 @@ namespace QL_BanHang
                                 where cbMaKH.Text == p.makh
                                 select p.ID_KH).SingleOrDefault();
                     hdx.ID_KH = list;
-                foreach (var item in from ds in db.CT_HDXuats where ds.ID_HDXuat == hdxs.ID_HDXuat select ds)
-                {
-                    db.CT_HDXuats.DeleteOnSubmit(item);
-                }
-                foreach (var item in lstchitiet)
-                {
-                    CT_HDXuat ct = new CT_HDXuat();
-                    ct.makho = item.makho;
-                    ct.masp = item.masp;
-                    ct.soluong = item.soluong;
-                    ct.chietkhau = item.chietkhau;
-                    ct.thanhtien = item.thanhtien;
 
-                    ct.ID_Kho = (from p in db.Khos
-                                 where item.makho == p.makho
-                                 select p.ID_Kho).SingleOrDefault();
 
-                    ct.ID_SP = (from p in db.SanPhams
-                                where item.masp == p.masp
-                                select p.ID_SP).SingleOrDefault();
+                    foreach (var item in lstchitiet)
+                    {
+                        CT_HDXuat ct = new CT_HDXuat();
+                        ct.makho = item.makho;
+                        ct.masp = item.masp;
+                        ct.soluong = item.soluong;
+                        ct.chietkhau = item.chietkhau;
+                        ct.thanhtien = item.thanhtien;
 
-                    ct.ID_HDXuat = (from p in db.HDXuats
-                                    where txt_SoPhieuXuat.Text == p.sophieuxuat
-                                    select p.ID_HDXuat).SingleOrDefault();
-                    ct.ID_CTHDX = item.ID_CTHDX;
 
-                    hdx.CT_HDXuats.Add(ct);
-                }
-                db.SubmitChanges();
-                frmHoaDonXuat_Load(sender, e);
-                this.DialogResult = DialogResult.Cancel;
-                db.SubmitChanges();
+                        ct.ID_Kho = item.ID_Kho;
+
+                        ct.ID_SP = item.ID_SP;
+
+                        ct.ID_HDXuat = item.ID_HDXuat;
+
+
+                        hdx.CT_HDXuats.Add(ct);
+                    }
+
+
+                    db.HDXuats.InsertOnSubmit(hdx);
+                    db.SubmitChanges();
                     frmHoaDonXuat_Load(sender, e);
                     this.DialogResult = DialogResult.Cancel;
-                
+                }
+                else
+                {
+                    HDXuat hdxs = (from ds in db.HDXuats where ds.ID_HDXuat == hdXuat.ID_HDXuat select ds).FirstOrDefault();
+
+                    hdx = db.HDXuats.Where(s => s.sophieuxuat == txt_SoPhieuXuat.Text).FirstOrDefault();
+                    hdx.sophieuxuat = txt_SoPhieuXuat.Text;
+                    hdx.makh = cbMaKH.Text;
+                    hdx.ngaytao = (DateTime)date_NgayTao.DateTime;
+                    var list = (from p in db.KHs
+                                where cbMaKH.Text == p.makh
+                                select p.ID_KH).SingleOrDefault();
+                    hdx.ID_KH = list;
+                    foreach (var item in from ds in db.CT_HDXuats where ds.ID_HDXuat == hdxs.ID_HDXuat select ds)
+                    {
+                        db.CT_HDXuats.DeleteOnSubmit(item);
+                    }
+                    foreach (var item in lstchitiet)
+                    {
+                        CT_HDXuat ct = new CT_HDXuat();
+                        ct.makho = item.makho;
+                        ct.masp = item.masp;
+                        ct.soluong = item.soluong;
+                        ct.chietkhau = item.chietkhau;
+                        ct.thanhtien = item.thanhtien;
+
+                        ct.ID_Kho = (from p in db.Khos
+                                     where item.makho == p.makho
+                                     select p.ID_Kho).SingleOrDefault();
+
+                        ct.ID_SP = (from p in db.SanPhams
+                                    where item.masp == p.masp
+                                    select p.ID_SP).SingleOrDefault();
+
+                        ct.ID_HDXuat = (from p in db.HDXuats
+                                        where txt_SoPhieuXuat.Text == p.sophieuxuat
+                                        select p.ID_HDXuat).SingleOrDefault();
+                        ct.ID_CTHDX = item.ID_CTHDX;
+
+                        hdx.CT_HDXuats.Add(ct);
+                    }
+                    db.SubmitChanges();
+                    frmHoaDonXuat_Load(sender, e);
+                    this.DialogResult = DialogResult.Cancel;
+                    db.SubmitChanges();
+                    frmHoaDonXuat_Load(sender, e);
+                    this.DialogResult = DialogResult.Cancel;
+
+                }
             }
+
+            catch (Exception)
+            {
+                MessageBox.Show("Xin hãy nhập dữ liệu", "Error");
+            }
+            
         }
 
         private void frmCapNhatHDXuat_Load(object sender, EventArgs e)
@@ -275,6 +292,81 @@ namespace QL_BanHang
                     }
 
                 }
+            }
+        }
+
+        private void txt_Thue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txt_SoLuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txt_ChietKhau_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txt_SoLuong_TextChanged(object sender, EventArgs e)
+        {
+            long n;
+            if (long.TryParse(txt_SoLuong.Text, out n))
+            {
+                label3.ForeColor = Color.Green;
+                label3.Text = "Successful!";
+            }
+            else
+            {
+                label3.ForeColor = Color.Red;
+                label3.Text = "Error! Vui lòng nhập số!";
+            }
+        }
+
+        private void txt_Thue_TextChanged(object sender, EventArgs e)
+        {
+            double n;
+            if (double.TryParse(txt_SoPhieuXuat.Text, out n))
+            {
+                label1.ForeColor = Color.Green;
+                label1.Text = "Successful!";
+            }
+            else
+            {
+                label1.ForeColor = Color.Red;
+                label1.Text = "Error! Vui lòng nhập số!";
+            }
+        }
+
+        private void txt_ChietKhau_TextChanged(object sender, EventArgs e)
+        {
+            double n;
+            if (double.TryParse(txt_ChietKhau.Text, out n))
+            {
+                label3.ForeColor = Color.Green;
+                label3.Text = "Successful!";
+            }
+            else
+            {
+                label3.ForeColor = Color.Red;
+                label3.Text = "Error! Vui lòng nhập số";
+            }
+        }
+
+        private void txt_SoPhieuXuat_TextChanged(object sender, EventArgs e)
+        {
+            long n;
+            if (long.TryParse(txt_SoPhieuXuat.Text, out n))
+            {
+                label1.ForeColor = Color.Green;
+                label1.Text = "Successful!";
+            }
+            else
+            {
+                label1.ForeColor = Color.Red;
+                label1.Text = "Error! Vui lòng nhập số!";
             }
         }
     }

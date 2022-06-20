@@ -157,6 +157,7 @@ namespace QL_BanHang
             this.gv_Nhacc.GridControl = this.gc_Nhacc;
             this.gv_Nhacc.Name = "gv_Nhacc";
             this.gv_Nhacc.OptionsBehavior.Editable = false;
+            this.gv_Nhacc.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn1
             // 
@@ -164,8 +165,6 @@ namespace QL_BanHang
             this.gridColumn1.FieldName = "ID_NCC";
             this.gridColumn1.MinWidth = 25;
             this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
             this.gridColumn1.Width = 94;
             // 
             // gridColumn2
@@ -175,7 +174,7 @@ namespace QL_BanHang
             this.gridColumn2.MinWidth = 25;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.VisibleIndex = 0;
             this.gridColumn2.Width = 94;
             // 
             // gridColumn3
@@ -185,7 +184,7 @@ namespace QL_BanHang
             this.gridColumn3.MinWidth = 25;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.VisibleIndex = 1;
             this.gridColumn3.Width = 94;
             // 
             // gridColumn4
@@ -195,7 +194,7 @@ namespace QL_BanHang
             this.gridColumn4.MinWidth = 25;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.VisibleIndex = 2;
             this.gridColumn4.Width = 94;
             // 
             // gridColumn5
@@ -205,7 +204,7 @@ namespace QL_BanHang
             this.gridColumn5.MinWidth = 25;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.VisibleIndex = 3;
             this.gridColumn5.Width = 94;
             // 
             // frmNhaCC

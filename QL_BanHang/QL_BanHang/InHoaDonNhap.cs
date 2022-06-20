@@ -31,7 +31,7 @@ namespace QL_BanHang
             txt_diachi.Text = obj.diachi;
             txt_mancc.Text = obj.mancc;
             txt_sdt.Text = obj.sdt;
-            txt_ngaytao.Text = Convert.ToString(obj.ngaytao);
+            txt_ngaytao.Text = obj.ngaytao.ToString("dd/MM/yyyy");
 
         }
         public InHoaDonNhap()

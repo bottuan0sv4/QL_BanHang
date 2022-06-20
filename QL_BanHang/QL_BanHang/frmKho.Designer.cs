@@ -117,40 +117,46 @@ namespace QL_BanHang
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(800, 24);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
+            this.barDockControlTop.Size = new System.Drawing.Size(1067, 30);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 450);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 554);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(800, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1067, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 426);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 524);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(800, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(1067, 30);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 426);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 524);
             // 
             // gc_Kho
             // 
             this.gc_Kho.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc_Kho.Location = new System.Drawing.Point(0, 24);
+            this.gc_Kho.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.gc_Kho.Location = new System.Drawing.Point(0, 30);
             this.gc_Kho.MainView = this.gv_Kho;
+            this.gc_Kho.Margin = new System.Windows.Forms.Padding(4);
             this.gc_Kho.MenuManager = this.barManager1;
             this.gc_Kho.Name = "gc_Kho";
-            this.gc_Kho.Size = new System.Drawing.Size(800, 426);
+            this.gc_Kho.Size = new System.Drawing.Size(1067, 524);
             this.gc_Kho.TabIndex = 4;
             this.gc_Kho.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_Kho});
@@ -161,44 +167,51 @@ namespace QL_BanHang
             this.gc_IDKho,
             this.gridColumn2,
             this.gridColumn1});
+            this.gv_Kho.DetailHeight = 431;
             this.gv_Kho.GridControl = this.gc_Kho;
             this.gv_Kho.Name = "gv_Kho";
             this.gv_Kho.OptionsBehavior.Editable = false;
+            this.gv_Kho.OptionsView.ShowGroupPanel = false;
             // 
             // gc_IDKho
             // 
             this.gc_IDKho.Caption = "ID Kho";
             this.gc_IDKho.FieldName = "ID_Kho";
+            this.gc_IDKho.MinWidth = 27;
             this.gc_IDKho.Name = "gc_IDKho";
-            this.gc_IDKho.Visible = true;
-            this.gc_IDKho.VisibleIndex = 0;
+            this.gc_IDKho.Width = 100;
             // 
             // gridColumn2
             // 
             this.gridColumn2.Caption = "TenKho";
             this.gridColumn2.FieldName = "tenkho";
+            this.gridColumn2.MinWidth = 27;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 2;
+            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 100;
             // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Mã Kho";
             this.gridColumn1.FieldName = "makho";
+            this.gridColumn1.MinWidth = 27;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 1;
+            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 100;
             // 
             // frmKho
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.gc_Kho);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmKho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Kho";

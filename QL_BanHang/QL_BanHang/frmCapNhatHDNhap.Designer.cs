@@ -54,6 +54,7 @@ namespace QL_BanHang
             this.chietKhau = new DevExpress.XtraGrid.Columns.GridColumn();
             this.thanhTien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sidePanel3 = new DevExpress.XtraEditors.SidePanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.cbMaSP = new System.Windows.Forms.ComboBox();
             this.cbMaKho = new System.Windows.Forms.ComboBox();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
@@ -69,6 +70,7 @@ namespace QL_BanHang
             this.txt_TenKho = new DevExpress.XtraEditors.TextEdit();
             this.txt_TenSP = new DevExpress.XtraEditors.TextEdit();
             this.bt_Luu = new DevExpress.XtraEditors.SimpleButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.sidePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_SoPhieuNhap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_NgayTao.Properties.CalendarTimeProperties)).BeginInit();
@@ -88,6 +90,7 @@ namespace QL_BanHang
             // 
             // sidePanel1
             // 
+            this.sidePanel1.Controls.Add(this.label1);
             this.sidePanel1.Controls.Add(this.txt_SoPhieuNhap);
             this.sidePanel1.Controls.Add(this.date_NgayTao);
             this.sidePanel1.Controls.Add(this.labelControl14);
@@ -111,6 +114,7 @@ namespace QL_BanHang
             this.txt_SoPhieuNhap.Name = "txt_SoPhieuNhap";
             this.txt_SoPhieuNhap.Size = new System.Drawing.Size(243, 22);
             this.txt_SoPhieuNhap.TabIndex = 73;
+            this.txt_SoPhieuNhap.TextChanged += new System.EventHandler(this.txt_SoPhieuNhap_TextChanged);
             // 
             // date_NgayTao
             // 
@@ -121,6 +125,8 @@ namespace QL_BanHang
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.date_NgayTao.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.date_NgayTao.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.date_NgayTao.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.date_NgayTao.Size = new System.Drawing.Size(234, 22);
             this.date_NgayTao.TabIndex = 71;
             // 
@@ -212,9 +218,9 @@ namespace QL_BanHang
             // 
             this.sidePanel2.Controls.Add(this.gc_ctHDNhap);
             this.sidePanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.sidePanel2.Location = new System.Drawing.Point(0, 231);
+            this.sidePanel2.Location = new System.Drawing.Point(0, 236);
             this.sidePanel2.Name = "sidePanel2";
-            this.sidePanel2.Size = new System.Drawing.Size(882, 258);
+            this.sidePanel2.Size = new System.Drawing.Size(882, 253);
             this.sidePanel2.TabIndex = 50;
             this.sidePanel2.Text = "sidePanel2";
             // 
@@ -225,7 +231,7 @@ namespace QL_BanHang
             this.gc_ctHDNhap.Location = new System.Drawing.Point(0, 1);
             this.gc_ctHDNhap.MainView = this.gv_ctHDNhap;
             this.gc_ctHDNhap.Name = "gc_ctHDNhap";
-            this.gc_ctHDNhap.Size = new System.Drawing.Size(882, 257);
+            this.gc_ctHDNhap.Size = new System.Drawing.Size(882, 252);
             this.gc_ctHDNhap.TabIndex = 75;
             this.gc_ctHDNhap.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_ctHDNhap});
@@ -245,6 +251,7 @@ namespace QL_BanHang
             this.gv_ctHDNhap.Name = "gv_ctHDNhap";
             this.gv_ctHDNhap.OptionsNavigation.EnterMoveNextColumn = true;
             this.gv_ctHDNhap.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gv_ctHDNhap.OptionsView.ShowAutoFilterRow = true;
             this.gv_ctHDNhap.OptionsView.ShowGroupPanel = false;
             this.gv_ctHDNhap.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gv_ctHDNhap_FocusedRowChanged);
             this.gv_ctHDNhap.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gv_ctHDNhap_CellValueChanged);
@@ -343,6 +350,7 @@ namespace QL_BanHang
             // 
             // sidePanel3
             // 
+            this.sidePanel3.Controls.Add(this.label2);
             this.sidePanel3.Controls.Add(this.cbMaSP);
             this.sidePanel3.Controls.Add(this.cbMaKho);
             this.sidePanel3.Controls.Add(this.labelControl10);
@@ -361,9 +369,17 @@ namespace QL_BanHang
             this.sidePanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sidePanel3.Location = new System.Drawing.Point(0, 170);
             this.sidePanel3.Name = "sidePanel3";
-            this.sidePanel3.Size = new System.Drawing.Size(882, 61);
+            this.sidePanel3.Size = new System.Drawing.Size(882, 66);
             this.sidePanel3.TabIndex = 94;
             this.sidePanel3.Text = "sidePanel3";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(585, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 17);
+            this.label2.TabIndex = 142;
             // 
             // cbMaSP
             // 
@@ -385,7 +401,7 @@ namespace QL_BanHang
             // 
             // labelControl10
             // 
-            this.labelControl10.Location = new System.Drawing.Point(585, 21);
+            this.labelControl10.Location = new System.Drawing.Point(585, 19);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(66, 17);
             this.labelControl10.TabIndex = 138;
@@ -393,7 +409,7 @@ namespace QL_BanHang
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(394, 36);
+            this.labelControl9.Location = new System.Drawing.Point(394, 41);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(45, 16);
             this.labelControl9.TabIndex = 137;
@@ -409,7 +425,7 @@ namespace QL_BanHang
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(175, 36);
+            this.labelControl7.Location = new System.Drawing.Point(175, 41);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(89, 17);
             this.labelControl7.TabIndex = 135;
@@ -425,7 +441,7 @@ namespace QL_BanHang
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(8, 36);
+            this.labelControl3.Location = new System.Drawing.Point(8, 41);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(47, 16);
             this.labelControl3.TabIndex = 133;
@@ -442,15 +458,17 @@ namespace QL_BanHang
             // txt_ChietKhau
             // 
             this.txt_ChietKhau.EditValue = "";
-            this.txt_ChietKhau.Location = new System.Drawing.Point(659, 18);
+            this.txt_ChietKhau.Location = new System.Drawing.Point(659, 16);
             this.txt_ChietKhau.Name = "txt_ChietKhau";
             this.txt_ChietKhau.Size = new System.Drawing.Size(96, 22);
             this.txt_ChietKhau.TabIndex = 131;
+            this.txt_ChietKhau.TextChanged += new System.EventHandler(this.txt_ChietKhau_TextChanged);
+            this.txt_ChietKhau.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ChietKhau_KeyPress);
             // 
             // txt_DonGia
             // 
             this.txt_DonGia.EditValue = "";
-            this.txt_DonGia.Location = new System.Drawing.Point(462, 33);
+            this.txt_DonGia.Location = new System.Drawing.Point(462, 38);
             this.txt_DonGia.Name = "txt_DonGia";
             this.txt_DonGia.Size = new System.Drawing.Size(96, 22);
             this.txt_DonGia.TabIndex = 130;
@@ -462,11 +480,13 @@ namespace QL_BanHang
             this.txt_SoLuong.Name = "txt_SoLuong";
             this.txt_SoLuong.Size = new System.Drawing.Size(96, 22);
             this.txt_SoLuong.TabIndex = 129;
+            this.txt_SoLuong.TextChanged += new System.EventHandler(this.txt_SoLuong_TextChanged);
+            this.txt_SoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SoLuong_KeyPress);
             // 
             // txt_TenKho
             // 
             this.txt_TenKho.EditValue = "";
-            this.txt_TenKho.Location = new System.Drawing.Point(64, 33);
+            this.txt_TenKho.Location = new System.Drawing.Point(64, 38);
             this.txt_TenKho.Name = "txt_TenKho";
             this.txt_TenKho.Size = new System.Drawing.Size(96, 22);
             this.txt_TenKho.TabIndex = 128;
@@ -474,7 +494,7 @@ namespace QL_BanHang
             // txt_TenSP
             // 
             this.txt_TenSP.EditValue = "";
-            this.txt_TenSP.Location = new System.Drawing.Point(276, 33);
+            this.txt_TenSP.Location = new System.Drawing.Point(276, 38);
             this.txt_TenSP.Name = "txt_TenSP";
             this.txt_TenSP.Size = new System.Drawing.Size(98, 22);
             this.txt_TenSP.TabIndex = 127;
@@ -482,12 +502,20 @@ namespace QL_BanHang
             // bt_Luu
             // 
             this.bt_Luu.ImageOptions.Image = global::QL_BanHang.Properties.Resources.save_32x32;
-            this.bt_Luu.Location = new System.Drawing.Point(773, 6);
+            this.bt_Luu.Location = new System.Drawing.Point(773, 13);
             this.bt_Luu.Name = "bt_Luu";
             this.bt_Luu.Size = new System.Drawing.Size(96, 47);
             this.bt_Luu.TabIndex = 126;
             this.bt_Luu.Text = "Lưu";
             this.bt_Luu.Click += new System.EventHandler(this.bt_Luu_Click_1);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 139);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 17);
+            this.label1.TabIndex = 74;
             // 
             // frmCapNhatHDNhap
             // 
@@ -498,6 +526,7 @@ namespace QL_BanHang
             this.Controls.Add(this.sidePanel2);
             this.Controls.Add(this.sidePanel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "frmCapNhatHDNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cập Nhật Hóa Đơn Nhập";
@@ -563,5 +592,7 @@ namespace QL_BanHang
         private DevExpress.XtraEditors.TextEdit txt_TenKho;
         private DevExpress.XtraEditors.TextEdit txt_TenSP;
         private DevExpress.XtraEditors.SimpleButton bt_Luu;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

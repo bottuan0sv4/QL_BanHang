@@ -39,6 +39,7 @@ namespace QL_BanHang
             this.txt_MaNCC = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.bt_CapNhat = new DevExpress.XtraEditors.SimpleButton();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenNCC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_SDT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_DiaChi.Properties)).BeginInit();
@@ -48,7 +49,7 @@ namespace QL_BanHang
             // bt_Huy
             // 
             this.bt_Huy.ImageOptions.SvgImage = global::QL_BanHang.Properties.Resources.paymentunpaid;
-            this.bt_Huy.Location = new System.Drawing.Point(680, 82);
+            this.bt_Huy.Location = new System.Drawing.Point(680, 96);
             this.bt_Huy.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Huy.Name = "bt_Huy";
             this.bt_Huy.Size = new System.Drawing.Size(125, 46);
@@ -80,6 +81,8 @@ namespace QL_BanHang
             this.txt_SDT.Name = "txt_SDT";
             this.txt_SDT.Size = new System.Drawing.Size(297, 22);
             this.txt_SDT.TabIndex = 44;
+            this.txt_SDT.TextChanged += new System.EventHandler(this.txt_SDT_TextChanged);
+            this.txt_SDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SDT_KeyPress);
             // 
             // labelControl5
             // 
@@ -127,7 +130,7 @@ namespace QL_BanHang
             // bt_CapNhat
             // 
             this.bt_CapNhat.ImageOptions.SvgImage = global::QL_BanHang.Properties.Resources.refreshallpivottable;
-            this.bt_CapNhat.Location = new System.Drawing.Point(547, 82);
+            this.bt_CapNhat.Location = new System.Drawing.Point(547, 96);
             this.bt_CapNhat.Margin = new System.Windows.Forms.Padding(4);
             this.bt_CapNhat.Name = "bt_CapNhat";
             this.bt_CapNhat.Size = new System.Drawing.Size(125, 46);
@@ -135,11 +138,20 @@ namespace QL_BanHang
             this.bt_CapNhat.Text = "Cập Nhật";
             this.bt_CapNhat.Click += new System.EventHandler(this.bt_CapNhat_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 125);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 17);
+            this.label1.TabIndex = 51;
+            // 
             // frmCapNhatNCC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 142);
+            this.ClientSize = new System.Drawing.Size(820, 154);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.bt_Huy);
             this.Controls.Add(this.txt_TenNCC);
             this.Controls.Add(this.labelControl7);
@@ -150,6 +162,7 @@ namespace QL_BanHang
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.txt_MaNCC);
             this.Controls.Add(this.labelControl1);
+            this.MaximizeBox = false;
             this.Name = "frmCapNhatNCC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cập Nhật Nhà Cung Cấp";
@@ -174,5 +187,6 @@ namespace QL_BanHang
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit txt_MaNCC;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private System.Windows.Forms.Label label1;
     }
 }

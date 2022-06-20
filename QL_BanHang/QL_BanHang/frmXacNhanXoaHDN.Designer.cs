@@ -171,6 +171,7 @@ namespace QL_BanHang
             this.Controls.Add(this.bt_Huy);
             this.Controls.Add(this.bt_Xacnhan);
             this.Controls.Add(this.labelControl1);
+            this.MaximizeBox = false;
             this.Name = "frmXacNhanXoaHDN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Xác Nhận Xóa Hóa Đơn Nhập";

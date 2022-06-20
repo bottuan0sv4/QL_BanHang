@@ -64,10 +64,12 @@ namespace QL_BanHang
             this.gc_TaiKhoan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gc_TaiKhoan.Location = new System.Drawing.Point(0, 24);
+            this.gc_TaiKhoan.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.gc_TaiKhoan.Location = new System.Drawing.Point(0, 30);
             this.gc_TaiKhoan.MainView = this.gv_TaiKhoan;
+            this.gc_TaiKhoan.Margin = new System.Windows.Forms.Padding(4);
             this.gc_TaiKhoan.Name = "gc_TaiKhoan";
-            this.gc_TaiKhoan.Size = new System.Drawing.Size(800, 425);
+            this.gc_TaiKhoan.Size = new System.Drawing.Size(1067, 523);
             this.gc_TaiKhoan.TabIndex = 0;
             this.gc_TaiKhoan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_TaiKhoan,
@@ -84,87 +86,108 @@ namespace QL_BanHang
             this.gridColumn6,
             this.gridColumn7,
             this.gridColumn8});
+            this.gv_TaiKhoan.DetailHeight = 431;
             this.gv_TaiKhoan.GridControl = this.gc_TaiKhoan;
             this.gv_TaiKhoan.Name = "gv_TaiKhoan";
             this.gv_TaiKhoan.OptionsBehavior.Editable = false;
+            this.gv_TaiKhoan.OptionsView.ShowGroupPanel = false;
             // 
             // ID_TK
             // 
             this.ID_TK.Caption = "ID Tài Khoản";
             this.ID_TK.FieldName = "ID_TK";
+            this.ID_TK.MinWidth = 27;
             this.ID_TK.Name = "ID_TK";
             this.ID_TK.OptionsColumn.FixedWidth = true;
-            this.ID_TK.Visible = true;
-            this.ID_TK.VisibleIndex = 0;
+            this.ID_TK.Width = 100;
             // 
             // gridColumn2
             // 
             this.gridColumn2.Caption = "Tên";
             this.gridColumn2.FieldName = "hoten";
+            this.gridColumn2.MinWidth = 27;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.VisibleIndex = 0;
+            this.gridColumn2.Width = 100;
             // 
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Địa Chỉ";
             this.gridColumn3.FieldName = "diachi";
+            this.gridColumn3.MinWidth = 27;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.VisibleIndex = 1;
+            this.gridColumn3.Width = 100;
             // 
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Ngày Sinh";
+            this.gridColumn4.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.gridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn4.FieldName = "ngaysinh";
+            this.gridColumn4.MinWidth = 27;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.VisibleIndex = 2;
+            this.gridColumn4.Width = 100;
             // 
             // gridColumn5
             // 
             this.gridColumn5.Caption = "Số Điện Thoại";
             this.gridColumn5.FieldName = "sdt";
+            this.gridColumn5.MinWidth = 27;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.VisibleIndex = 3;
+            this.gridColumn5.Width = 100;
             // 
             // gridColumn6
             // 
             this.gridColumn6.Caption = "Giới Tính";
             this.gridColumn6.FieldName = "gioitinh";
+            this.gridColumn6.MinWidth = 27;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.VisibleIndex = 4;
+            this.gridColumn6.Width = 100;
             // 
             // gridColumn7
             // 
             this.gridColumn7.Caption = "Username";
             this.gridColumn7.FieldName = "username";
+            this.gridColumn7.MinWidth = 27;
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
+            this.gridColumn7.VisibleIndex = 5;
+            this.gridColumn7.Width = 100;
             // 
             // gridColumn8
             // 
             this.gridColumn8.Caption = "Password";
             this.gridColumn8.FieldName = "password";
+            this.gridColumn8.MinWidth = 27;
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 7;
+            this.gridColumn8.VisibleIndex = 6;
+            this.gridColumn8.Width = 100;
             // 
             // bandedGridView1
             // 
             this.bandedGridView1.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
             this.gridBand1});
+            this.bandedGridView1.DetailHeight = 431;
             this.bandedGridView1.GridControl = this.gc_TaiKhoan;
             this.bandedGridView1.Name = "bandedGridView1";
             // 
             // gridBand1
             // 
             this.gridBand1.Caption = "gridBand1";
+            this.gridBand1.MinWidth = 13;
             this.gridBand1.Name = "gridBand1";
             this.gridBand1.VisibleIndex = 0;
+            this.gridBand1.Width = 93;
             // 
             // barManager1
             // 
@@ -225,31 +248,35 @@ namespace QL_BanHang
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(800, 24);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
+            this.barDockControlTop.Size = new System.Drawing.Size(1067, 30);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 450);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 554);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(800, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1067, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 426);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 524);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(800, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(1067, 30);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 426);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 524);
             // 
             // bt_Luu
             // 
@@ -269,14 +296,15 @@ namespace QL_BanHang
             // 
             // FrmTaiKhoan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.gc_TaiKhoan);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmTaiKhoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Danh mục tài khoản";

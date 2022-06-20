@@ -30,47 +30,55 @@ namespace QL_BanHang
         }
         private void bt_CapNhat_Click(object sender, EventArgs e)
         {
-            if (themmoi)
+            try
             {
-                sp.masp = txt_MaSP.Text;
-                sp.tensp = txt_TenSP.Text;
-                sp.donvi = txt_DonVi.Text;
-                sp.dongia = Convert.ToDouble(txt_DonGia.EditValue);
-                sp.ngaytao = date_NgayTao.DateTime;
-
-                db.SanPhams.InsertOnSubmit(sp);
-                db.SubmitChanges();
-                frmSanPham_Load(sender, e);
-                this.DialogResult = DialogResult.Cancel;
-            }
-            else
-            {
-                if (xoa)
+                if (themmoi)
                 {
-                    sp = db.SanPhams.Where(s => s.masp == txt_MaSP.Text).FirstOrDefault();
+                    sp.masp = txt_MaSP.Text;
                     sp.tensp = txt_TenSP.Text;
                     sp.donvi = txt_DonVi.Text;
                     sp.dongia = Convert.ToDouble(txt_DonGia.EditValue);
                     sp.ngaytao = date_NgayTao.DateTime;
 
-                    db.SanPhams.DeleteOnSubmit(sp);
+                    db.SanPhams.InsertOnSubmit(sp);
                     db.SubmitChanges();
                     frmSanPham_Load(sender, e);
                     this.DialogResult = DialogResult.Cancel;
                 }
                 else
                 {
-                    sp = db.SanPhams.Where(s => s.masp == txt_MaSP.Text).FirstOrDefault();
-                    sp.tensp = txt_TenSP.Text;
-                    sp.donvi = txt_DonVi.Text;
-                    sp.dongia = Convert.ToDouble(txt_DonGia.EditValue);
-                    sp.ngaytao = date_NgayTao.DateTime;
+                    if (xoa)
+                    {
+                        sp = db.SanPhams.Where(s => s.masp == txt_MaSP.Text).FirstOrDefault();
+                        sp.tensp = txt_TenSP.Text;
+                        sp.donvi = txt_DonVi.Text;
+                        sp.dongia = Convert.ToDouble(txt_DonGia.EditValue);
+                        sp.ngaytao = date_NgayTao.DateTime;
 
-                    db.SubmitChanges();
-                    frmSanPham_Load(sender, e);
-                    this.DialogResult = DialogResult.Cancel;
+                        db.SanPhams.DeleteOnSubmit(sp);
+                        db.SubmitChanges();
+                        frmSanPham_Load(sender, e);
+                        this.DialogResult = DialogResult.Cancel;
+                    }
+                    else
+                    {
+                        sp = db.SanPhams.Where(s => s.masp == txt_MaSP.Text).FirstOrDefault();
+                        sp.tensp = txt_TenSP.Text;
+                        sp.donvi = txt_DonVi.Text;
+                        sp.dongia = Convert.ToDouble(txt_DonGia.EditValue);
+                        sp.ngaytao = date_NgayTao.DateTime;
+
+                        db.SubmitChanges();
+                        frmSanPham_Load(sender, e);
+                        this.DialogResult = DialogResult.Cancel;
+                    }
                 }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Xin hãy nhập dữ liệu!", "Error");
+            }
+            
         }
 
         private void bt_Huy_Click(object sender, EventArgs e)
@@ -96,6 +104,26 @@ namespace QL_BanHang
                 txt_DonVi.Text = sanPham.donvi;
                 txt_DonGia.EditValue = sanPham.dongia;
                 date_NgayTao.DateTime = (DateTime)sanPham.ngaytao;
+            }
+        }
+
+        private void txt_DonGia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void txt_DonGia_TextChanged(object sender, EventArgs e)
+        {
+            long n;
+            if (long.TryParse(txt_DonGia.Text, out n))
+            {
+                label1.ForeColor = Color.Green;
+                label1.Text = "Successful!";
+            }
+            else
+            {
+                label1.ForeColor = Color.Red;
+                label1.Text = "Error! Vui lòng nhập số";
             }
         }
     }

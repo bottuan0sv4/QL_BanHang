@@ -18,11 +18,12 @@ namespace QL_BanHang
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TrangChu());
+            //Application.Run(new TrangChu());
             //Application.Run(new frmHoaDonXuat());
             //Application.Run(new frmHoaDonNhap());
             //Application.Run(new frmBaoCao());
             //Application.Run(new frmTonKho());
+            Application.Run(new frmLogin());
         }
     }
 }

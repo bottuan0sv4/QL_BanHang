@@ -43,6 +43,7 @@ namespace QL_BanHang
             this.txt_MSThue = new DevExpress.XtraEditors.TextEdit();
             this.bt_Huy = new DevExpress.XtraEditors.SimpleButton();
             this.bt_CapNhat = new DevExpress.XtraEditors.SimpleButton();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenKH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_GioiTinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_SDT.Properties)).BeginInit();
@@ -54,7 +55,7 @@ namespace QL_BanHang
             // txt_TenKH
             // 
             this.txt_TenKH.Location = new System.Drawing.Point(143, 47);
-            this.txt_TenKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_TenKH.Margin = new System.Windows.Forms.Padding(4);
             this.txt_TenKH.Name = "txt_TenKH";
             this.txt_TenKH.Size = new System.Drawing.Size(229, 22);
             this.txt_TenKH.TabIndex = 34;
@@ -62,7 +63,7 @@ namespace QL_BanHang
             // labelControl7
             // 
             this.labelControl7.Location = new System.Drawing.Point(21, 50);
-            this.labelControl7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl7.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(93, 16);
             this.labelControl7.TabIndex = 33;
@@ -71,7 +72,7 @@ namespace QL_BanHang
             // txt_GioiTinh
             // 
             this.txt_GioiTinh.Location = new System.Drawing.Point(517, 79);
-            this.txt_GioiTinh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_GioiTinh.Margin = new System.Windows.Forms.Padding(4);
             this.txt_GioiTinh.Name = "txt_GioiTinh";
             this.txt_GioiTinh.Size = new System.Drawing.Size(75, 22);
             this.txt_GioiTinh.TabIndex = 32;
@@ -79,7 +80,7 @@ namespace QL_BanHang
             // labelControl6
             // 
             this.labelControl6.Location = new System.Drawing.Point(395, 84);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(51, 17);
             this.labelControl6.TabIndex = 30;
@@ -88,15 +89,17 @@ namespace QL_BanHang
             // txt_SDT
             // 
             this.txt_SDT.Location = new System.Drawing.Point(516, 47);
-            this.txt_SDT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_SDT.Margin = new System.Windows.Forms.Padding(4);
             this.txt_SDT.Name = "txt_SDT";
             this.txt_SDT.Size = new System.Drawing.Size(297, 22);
             this.txt_SDT.TabIndex = 29;
+            this.txt_SDT.TextChanged += new System.EventHandler(this.txt_SDT_TextChanged);
+            this.txt_SDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SDT_KeyPress);
             // 
             // labelControl5
             // 
             this.labelControl5.Location = new System.Drawing.Point(395, 52);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(84, 17);
             this.labelControl5.TabIndex = 28;
@@ -105,7 +108,7 @@ namespace QL_BanHang
             // txt_DiaChi
             // 
             this.txt_DiaChi.Location = new System.Drawing.Point(516, 15);
-            this.txt_DiaChi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_DiaChi.Margin = new System.Windows.Forms.Padding(4);
             this.txt_DiaChi.Name = "txt_DiaChi";
             this.txt_DiaChi.Size = new System.Drawing.Size(297, 22);
             this.txt_DiaChi.TabIndex = 27;
@@ -113,7 +116,7 @@ namespace QL_BanHang
             // labelControl4
             // 
             this.labelControl4.Location = new System.Drawing.Point(395, 20);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(42, 17);
             this.labelControl4.TabIndex = 26;
@@ -122,7 +125,7 @@ namespace QL_BanHang
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(21, 84);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(96, 17);
             this.labelControl2.TabIndex = 23;
@@ -131,7 +134,7 @@ namespace QL_BanHang
             // txt_MaKH
             // 
             this.txt_MaKH.Location = new System.Drawing.Point(143, 15);
-            this.txt_MaKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_MaKH.Margin = new System.Windows.Forms.Padding(4);
             this.txt_MaKH.Name = "txt_MaKH";
             this.txt_MaKH.Size = new System.Drawing.Size(229, 22);
             this.txt_MaKH.TabIndex = 22;
@@ -139,7 +142,7 @@ namespace QL_BanHang
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(21, 18);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(88, 16);
             this.labelControl1.TabIndex = 21;
@@ -148,16 +151,18 @@ namespace QL_BanHang
             // txt_MSThue
             // 
             this.txt_MSThue.Location = new System.Drawing.Point(143, 80);
-            this.txt_MSThue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_MSThue.Margin = new System.Windows.Forms.Padding(4);
             this.txt_MSThue.Name = "txt_MSThue";
             this.txt_MSThue.Size = new System.Drawing.Size(75, 22);
             this.txt_MSThue.TabIndex = 37;
+            this.txt_MSThue.TextChanged += new System.EventHandler(this.txt_MSThue_TextChanged);
+            this.txt_MSThue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_MSThue_KeyPress);
             // 
             // bt_Huy
             // 
             this.bt_Huy.ImageOptions.SvgImage = global::QL_BanHang.Properties.Resources.paymentunpaid;
             this.bt_Huy.Location = new System.Drawing.Point(688, 144);
-            this.bt_Huy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bt_Huy.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Huy.Name = "bt_Huy";
             this.bt_Huy.Size = new System.Drawing.Size(125, 46);
             this.bt_Huy.TabIndex = 36;
@@ -175,11 +180,20 @@ namespace QL_BanHang
             this.bt_CapNhat.Text = "Cập Nhật";
             this.bt_CapNhat.Click += new System.EventHandler(this.bt_ClickCapNhat);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(18, 173);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 17);
+            this.label1.TabIndex = 38;
+            // 
             // frmCapNhatKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 199);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_MSThue);
             this.Controls.Add(this.bt_Huy);
             this.Controls.Add(this.txt_TenKH);
@@ -194,7 +208,8 @@ namespace QL_BanHang
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.txt_MaKH);
             this.Controls.Add(this.labelControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "frmCapNhatKhachHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cập Nhật Khách Hàng";
@@ -226,5 +241,6 @@ namespace QL_BanHang
         private DevExpress.XtraEditors.TextEdit txt_MaKH;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txt_MSThue;
+        private System.Windows.Forms.Label label1;
     }
 }

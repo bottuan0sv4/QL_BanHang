@@ -1,18 +1,12 @@
 ﻿using DevExpress.XtraBars;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QL_BanHang
 {
     public partial class TrangChu : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        public bool isThoat = true;
         public TrangChu()
         {
             InitializeComponent();
@@ -119,6 +113,35 @@ namespace QL_BanHang
             frmTonKho f = new frmTonKho();
             f.MdiParent = this;
             f.Show();
+        }
+
+        private void bt_dangxuat__ItemClick(object sender, ItemClickEventArgs e)
+        {
+            
+        }
+
+        private void bt_dang_xuat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            isThoat = false;
+            this.Close();
+            frmLogin f = new frmLogin();
+            f.Show();
+        }
+
+        private void TrangChu_FormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)
+        {
+            if (isThoat)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void bt_thoat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (isThoat)
+            {
+                Application.Exit();
+            }
         }
     }
 }

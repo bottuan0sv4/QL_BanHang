@@ -203,6 +203,7 @@ namespace QL_BanHang
             this.gv_HDNhap.GridControl = this.gc_HDNhap;
             this.gv_HDNhap.Name = "gv_HDNhap";
             this.gv_HDNhap.OptionsBehavior.Editable = false;
+            this.gv_HDNhap.OptionsView.ShowGroupPanel = false;
             this.gv_HDNhap.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gv_HDNhap_FocusedRowChanged);
             // 
             // gridColumn1
@@ -211,8 +212,6 @@ namespace QL_BanHang
             this.gridColumn1.FieldName = "ID_HDNhap";
             this.gridColumn1.MinWidth = 27;
             this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
             this.gridColumn1.Width = 100;
             // 
             // gridColumn2
@@ -222,7 +221,7 @@ namespace QL_BanHang
             this.gridColumn2.MinWidth = 27;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.VisibleIndex = 0;
             this.gridColumn2.Width = 100;
             // 
             // gridColumn4
@@ -232,7 +231,7 @@ namespace QL_BanHang
             this.gridColumn4.MinWidth = 27;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 2;
+            this.gridColumn4.VisibleIndex = 1;
             this.gridColumn4.Width = 100;
             // 
             // gridColumn5
@@ -242,17 +241,19 @@ namespace QL_BanHang
             this.gridColumn5.MinWidth = 27;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 3;
+            this.gridColumn5.VisibleIndex = 2;
             this.gridColumn5.Width = 100;
             // 
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Ngày Tạo";
+            this.gridColumn3.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn3.FieldName = "ngaytao";
             this.gridColumn3.MinWidth = 27;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 4;
+            this.gridColumn3.VisibleIndex = 3;
             this.gridColumn3.Width = 100;
             // 
             // barManager1
@@ -414,6 +415,8 @@ namespace QL_BanHang
             this.gv_CTHDNhap.GridControl = this.gc_CTHDNhap;
             this.gv_CTHDNhap.Name = "gv_CTHDNhap";
             this.gv_CTHDNhap.OptionsBehavior.Editable = false;
+            this.gv_CTHDNhap.OptionsView.ShowAutoFilterRow = true;
+            this.gv_CTHDNhap.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn10
             // 

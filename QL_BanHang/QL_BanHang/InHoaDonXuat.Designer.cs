@@ -46,6 +46,8 @@ namespace QL_BanHang
             this.xrTableCell15 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell16 = new DevExpress.XtraReports.UI.XRTableCell();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
+            this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
+            this.txt_masothue = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
@@ -71,8 +73,6 @@ namespace QL_BanHang
             this.xrTableCell10 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell11 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell17 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
-            this.txt_masothue = new DevExpress.XtraReports.UI.XRLabel();
             this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
             this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.objectDataSource1 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
@@ -83,7 +83,7 @@ namespace QL_BanHang
             // 
             // TopMargin
             // 
-            this.TopMargin.HeightF = 34.16667F;
+            this.TopMargin.HeightF = 88.33334F;
             this.TopMargin.Name = "TopMargin";
             // 
             // BottomMargin
@@ -253,9 +253,30 @@ namespace QL_BanHang
             this.ReportHeader.HeightF = 175F;
             this.ReportHeader.Name = "ReportHeader";
             // 
+            // xrLabel8
+            // 
+            this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(599.9999F, 142F);
+            this.xrLabel8.Multiline = true;
+            this.xrLabel8.Name = "xrLabel8";
+            this.xrLabel8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel8.SizeF = new System.Drawing.SizeF(95.00006F, 22.99999F);
+            this.xrLabel8.StylePriority.UseTextAlignment = false;
+            this.xrLabel8.Text = "Mã Số Thuế:\r\n";
+            this.xrLabel8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // txt_masothue
+            // 
+            this.txt_masothue.LocationFloat = new DevExpress.Utils.PointFloat(695.0001F, 142F);
+            this.txt_masothue.Multiline = true;
+            this.txt_masothue.Name = "txt_masothue";
+            this.txt_masothue.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.txt_masothue.SizeF = new System.Drawing.SizeF(91.99994F, 22.99999F);
+            this.txt_masothue.StylePriority.UseTextAlignment = false;
+            this.txt_masothue.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
             // xrLabel2
             // 
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(40F, 106F);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(40F, 96F);
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -266,7 +287,7 @@ namespace QL_BanHang
             // 
             // xrLabel3
             // 
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(40F, 129F);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(40F, 119F);
             this.xrLabel3.Multiline = true;
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -278,7 +299,7 @@ namespace QL_BanHang
             // 
             // xrLabel4
             // 
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(40F, 152F);
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(40F, 142F);
             this.xrLabel4.Multiline = true;
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -289,7 +310,7 @@ namespace QL_BanHang
             // 
             // xrLabel6
             // 
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(404.9999F, 129F);
+            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(404.9999F, 119F);
             this.xrLabel6.Multiline = true;
             this.xrLabel6.Name = "xrLabel6";
             this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -300,7 +321,7 @@ namespace QL_BanHang
             // 
             // xrLabel5
             // 
-            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(405F, 152F);
+            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(405F, 142F);
             this.xrLabel5.Multiline = true;
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -311,7 +332,7 @@ namespace QL_BanHang
             // 
             // xrLabel7
             // 
-            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(405F, 106F);
+            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(405F, 96F);
             this.xrLabel7.Multiline = true;
             this.xrLabel7.Name = "xrLabel7";
             this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -322,7 +343,7 @@ namespace QL_BanHang
             // 
             // txt_diachi
             // 
-            this.txt_diachi.LocationFloat = new DevExpress.Utils.PointFloat(504.9999F, 129F);
+            this.txt_diachi.LocationFloat = new DevExpress.Utils.PointFloat(504.9999F, 119F);
             this.txt_diachi.Multiline = true;
             this.txt_diachi.Name = "txt_diachi";
             this.txt_diachi.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -332,7 +353,7 @@ namespace QL_BanHang
             // 
             // txt_makh
             // 
-            this.txt_makh.LocationFloat = new DevExpress.Utils.PointFloat(193F, 129F);
+            this.txt_makh.LocationFloat = new DevExpress.Utils.PointFloat(193F, 119F);
             this.txt_makh.Multiline = true;
             this.txt_makh.Name = "txt_makh";
             this.txt_makh.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -342,7 +363,7 @@ namespace QL_BanHang
             // 
             // txt_ngaytao
             // 
-            this.txt_ngaytao.LocationFloat = new DevExpress.Utils.PointFloat(505F, 106F);
+            this.txt_ngaytao.LocationFloat = new DevExpress.Utils.PointFloat(505F, 96F);
             this.txt_ngaytao.Multiline = true;
             this.txt_ngaytao.Name = "txt_ngaytao";
             this.txt_ngaytao.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -353,7 +374,7 @@ namespace QL_BanHang
             // 
             // txt_sdt
             // 
-            this.txt_sdt.LocationFloat = new DevExpress.Utils.PointFloat(505F, 152F);
+            this.txt_sdt.LocationFloat = new DevExpress.Utils.PointFloat(505F, 142F);
             this.txt_sdt.Multiline = true;
             this.txt_sdt.Name = "txt_sdt";
             this.txt_sdt.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -363,7 +384,7 @@ namespace QL_BanHang
             // 
             // txt_sophieu
             // 
-            this.txt_sophieu.LocationFloat = new DevExpress.Utils.PointFloat(193F, 106F);
+            this.txt_sophieu.LocationFloat = new DevExpress.Utils.PointFloat(193F, 96F);
             this.txt_sophieu.Multiline = true;
             this.txt_sophieu.Name = "txt_sophieu";
             this.txt_sophieu.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -373,7 +394,7 @@ namespace QL_BanHang
             // 
             // txt_tenkh
             // 
-            this.txt_tenkh.LocationFloat = new DevExpress.Utils.PointFloat(193F, 152F);
+            this.txt_tenkh.LocationFloat = new DevExpress.Utils.PointFloat(193F, 142F);
             this.txt_tenkh.Multiline = true;
             this.txt_tenkh.Name = "txt_tenkh";
             this.txt_tenkh.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -384,7 +405,7 @@ namespace QL_BanHang
             // xrLabel1
             // 
             this.xrLabel1.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(301F, 0F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(301F, 30.50001F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -530,27 +551,6 @@ namespace QL_BanHang
             this.xrTableCell17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell17.Weight = 1.2714085217943214D;
             // 
-            // xrLabel8
-            // 
-            this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(599.9999F, 152F);
-            this.xrLabel8.Multiline = true;
-            this.xrLabel8.Name = "xrLabel8";
-            this.xrLabel8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel8.SizeF = new System.Drawing.SizeF(95.00006F, 22.99999F);
-            this.xrLabel8.StylePriority.UseTextAlignment = false;
-            this.xrLabel8.Text = "Mã Số Thuế:\r\n";
-            this.xrLabel8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
-            // txt_masothue
-            // 
-            this.txt_masothue.LocationFloat = new DevExpress.Utils.PointFloat(695.0001F, 152F);
-            this.txt_masothue.Multiline = true;
-            this.txt_masothue.Name = "txt_masothue";
-            this.txt_masothue.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.txt_masothue.SizeF = new System.Drawing.SizeF(91.99994F, 22.99999F);
-            this.txt_masothue.StylePriority.UseTextAlignment = false;
-            this.txt_masothue.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            // 
             // PageFooter
             // 
             this.PageFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
@@ -585,7 +585,7 @@ namespace QL_BanHang
             this.objectDataSource1});
             this.DataSource = this.objectDataSource1;
             this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(20, 20, 34, 0);
+            this.Margins = new System.Drawing.Printing.Margins(20, 20, 88, 0);
             this.PageHeight = 1169;
             this.PageWidth = 827;
             this.PaperKind = System.Drawing.Printing.PaperKind.A4;

@@ -94,6 +94,7 @@ namespace QL_BanHang
             this.gv_TonKho.OptionsBehavior.Editable = false;
             this.gv_TonKho.OptionsView.ShowAutoFilterRow = true;
             this.gv_TonKho.OptionsView.ShowDetailButtons = false;
+            this.gv_TonKho.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn6
             // 

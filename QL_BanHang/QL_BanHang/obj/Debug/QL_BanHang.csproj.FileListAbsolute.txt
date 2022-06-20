@@ -701,3 +701,16 @@ D:\Workplace\VStudio\QL_BanHang_Demo\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.
 D:\Workplace\VStudio\QL_BanHang_Demo\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.InHoaDonNhap.resources
 D:\Workplace\VStudio\QL_BanHang_Demo\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.csproj.AssemblyReference.cache
 D:\Workplace\VStudio\QL_BanHang_Demo\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.frmTrangChu.resources
+D:\Workplace\VStudio\QL_BanHang\QL_BanHang\QL_BanHang\bin\Debug\Dapper.dll
+D:\Workplace\VStudio\QL_BanHang\QL_BanHang\QL_BanHang\bin\Debug\Syncfusion.Compression.Base.dll
+D:\Workplace\VStudio\QL_BanHang\QL_BanHang\QL_BanHang\bin\Debug\Syncfusion.Licensing.dll
+D:\Workplace\VStudio\QL_BanHang\QL_BanHang\QL_BanHang\bin\Debug\Syncfusion.XlsIO.Base.dll
+D:\Workplace\VStudio\QL_BanHang\QL_BanHang\QL_BanHang\bin\Debug\Dapper.xml
+D:\Workplace\VStudio\QL_BanHang\QL_BanHang\QL_BanHang\bin\Debug\Syncfusion.Compression.Base.xml
+D:\Workplace\VStudio\QL_BanHang\QL_BanHang\QL_BanHang\bin\Debug\Syncfusion.XlsIO.Base.xml
+D:\Workplace\VStudio\QL_BanHang\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.frmTonKho.resources
+D:\Workplace\VStudio\QL_BanHang\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.frmTrangChu.resources
+D:\Workplace\VStudio\QL_BanHang\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.InHoaDonXuat.resources
+D:\Workplace\VStudio\QL_BanHang\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.InHoaDonNhap.resources
+D:\Workplace\VStudio\QL_BanHang\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.csproj.AssemblyReference.cache
+D:\Workplace\VStudio\QL_BanHang\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.frmLogin.resources

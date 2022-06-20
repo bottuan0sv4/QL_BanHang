@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QL_BanHang
@@ -46,46 +42,74 @@ namespace QL_BanHang
 
         private void bt_CapNhat_Click(object sender, EventArgs e)
         {
-            if (themmoi)
+            try
             {
-                ncc.mancc = txt_MaNCC.Text;
-                ncc.tenncc = txt_TenNCC.Text;
-                ncc.diachi = txt_DiaChi.Text;
-                ncc.sdt = txt_SDT.Text;
-                db.NCCs.InsertOnSubmit(ncc);
-                db.SubmitChanges();
-                frmNhaCC_Load(sender, e);
-                this.DialogResult = DialogResult.Cancel;
-            }
-            else
-            {
-                if (xoa)
+                if (themmoi)
                 {
-                    ncc = db.NCCs.Where(s => s.mancc == txt_MaNCC.Text).FirstOrDefault();
+                    ncc.mancc = txt_MaNCC.Text;
                     ncc.tenncc = txt_TenNCC.Text;
                     ncc.diachi = txt_DiaChi.Text;
                     ncc.sdt = txt_SDT.Text;
-                    db.NCCs.DeleteOnSubmit(ncc);
+                    db.NCCs.InsertOnSubmit(ncc);
                     db.SubmitChanges();
                     frmNhaCC_Load(sender, e);
                     this.DialogResult = DialogResult.Cancel;
                 }
                 else
                 {
-                    ncc = db.NCCs.Where(s => s.mancc == txt_MaNCC.Text).FirstOrDefault();
-                    ncc.tenncc = txt_TenNCC.Text;
-                    ncc.diachi = txt_DiaChi.Text;
-                    ncc.sdt = txt_SDT.Text;
-                    db.SubmitChanges();
-                    frmNhaCC_Load(sender, e);
-                    this.DialogResult = DialogResult.Cancel;
+                    if (xoa)
+                    {
+                        ncc = db.NCCs.Where(s => s.mancc == txt_MaNCC.Text).FirstOrDefault();
+                        ncc.tenncc = txt_TenNCC.Text;
+                        ncc.diachi = txt_DiaChi.Text;
+                        ncc.sdt = txt_SDT.Text;
+                        db.NCCs.DeleteOnSubmit(ncc);
+                        db.SubmitChanges();
+                        frmNhaCC_Load(sender, e);
+                        this.DialogResult = DialogResult.Cancel;
+                    }
+                    else
+                    {
+                        ncc = db.NCCs.Where(s => s.mancc == txt_MaNCC.Text).FirstOrDefault();
+                        ncc.tenncc = txt_TenNCC.Text;
+                        ncc.diachi = txt_DiaChi.Text;
+                        ncc.sdt = txt_SDT.Text;
+                        db.SubmitChanges();
+                        frmNhaCC_Load(sender, e);
+                        this.DialogResult = DialogResult.Cancel;
+                    }
                 }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Xin hãy nhập dữ liệu!", "Error");
+            }
+            
         }
 
         private void bt_Huy_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void txt_SDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txt_SDT_TextChanged(object sender, EventArgs e)
+        {
+            long n;
+            if (long.TryParse(txt_SDT.Text, out n))
+            {
+                label1.ForeColor = Color.Green;
+                label1.Text = "Successful!";
+            }
+            else
+            {
+                label1.ForeColor = Color.Red;
+                label1.Text = "Error! Vui lòng nhập số!";
+            }
         }
     }
 }

@@ -43,37 +43,45 @@ namespace QL_BanHang
 
         private void bt_CapNhat_Click(object sender, EventArgs e)
         {
-            if (Themmoi)
+            try
             {
-                k.makho = txt_MaKho.Text;
-                k.tenkho = txt_TenKho.Text;
-
-                db.Khos.InsertOnSubmit(k);
-                db.SubmitChanges();
-                frmKho_Load(sender, e);
-
-                this.DialogResult = DialogResult.Cancel;
-            }
-            else
-            {
-                if (Xoa)
+                if (Themmoi)
                 {
-                    k = db.Khos.Where(s => s.makho == txt_MaKho.Text).FirstOrDefault();
+                    k.makho = txt_MaKho.Text;
                     k.tenkho = txt_TenKho.Text;
-                    db.Khos.DeleteOnSubmit(k);
+
+                    db.Khos.InsertOnSubmit(k);
                     db.SubmitChanges();
                     frmKho_Load(sender, e);
+
                     this.DialogResult = DialogResult.Cancel;
                 }
                 else
                 {
-                    k = db.Khos.Where(s => s.makho == txt_MaKho.Text).FirstOrDefault();
-                    k.tenkho = txt_TenKho.Text;
-                    db.SubmitChanges();
-                    frmKho_Load(sender, e);
-                    this.DialogResult = DialogResult.Cancel;
+                    if (Xoa)
+                    {
+                        k = db.Khos.Where(s => s.makho == txt_MaKho.Text).FirstOrDefault();
+                        k.tenkho = txt_TenKho.Text;
+                        db.Khos.DeleteOnSubmit(k);
+                        db.SubmitChanges();
+                        frmKho_Load(sender, e);
+                        this.DialogResult = DialogResult.Cancel;
+                    }
+                    else
+                    {
+                        k = db.Khos.Where(s => s.makho == txt_MaKho.Text).FirstOrDefault();
+                        k.tenkho = txt_TenKho.Text;
+                        db.SubmitChanges();
+                        frmKho_Load(sender, e);
+                        this.DialogResult = DialogResult.Cancel;
+                    }
                 }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Xin hãy nhập dữ liệu!", "Error");
+            }
+            
         }
 
         private void bt_Huy_Click(object sender, EventArgs e)
