@@ -21,7 +21,6 @@
       <Column Name="ID_Kho" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ID_SP" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="soluong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="nam" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Association Name="Kho_TonKho" Member="Kho" ThisKey="ID_Kho" OtherKey="ID_Kho" Type="Kho" IsForeignKey="true" />
       <Association Name="SanPham_TonKho" Member="SanPham" ThisKey="ID_SP" OtherKey="ID_SP" Type="SanPham" IsForeignKey="true" />
     </Type>

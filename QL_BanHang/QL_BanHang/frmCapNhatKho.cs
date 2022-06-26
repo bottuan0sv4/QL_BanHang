@@ -41,20 +41,33 @@ namespace QL_BanHang
 
         }
 
-        private void bt_CapNhat_Click(object sender, EventArgs e)
+        private void bt_Huy_Click(object sender, EventArgs e)
         {
-            try
-            {
+            this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void bt_XacNhan_Click(object sender, EventArgs e)
+        {
+
                 if (Themmoi)
                 {
                     k.makho = txt_MaKho.Text;
                     k.tenkho = txt_TenKho.Text;
-
+                if (string.IsNullOrEmpty(k.makho))
+                {
+                    MessageBox.Show("Hãy nhập dữ liệu!", "Error");
+                }
+                else
+                {
                     db.Khos.InsertOnSubmit(k);
                     db.SubmitChanges();
                     frmKho_Load(sender, e);
 
                     this.DialogResult = DialogResult.Cancel;
+                }
+                    
+                
+                
                 }
                 else
                 {
@@ -76,17 +89,13 @@ namespace QL_BanHang
                         this.DialogResult = DialogResult.Cancel;
                     }
                 }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Xin hãy nhập dữ liệu!", "Error");
-            }
-            
+                
         }
 
-        private void bt_Huy_Click(object sender, EventArgs e)
+        private void frmCapNhatKho_KeyDown(object sender, KeyEventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
+            if (e.KeyCode.Equals(Keys.Escape))
+                this.Close();
         }
     }
 }

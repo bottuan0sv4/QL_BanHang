@@ -57,5 +57,11 @@ namespace QL_BanHang
             f.ShowDialog();
             dataload();
         }
+
+        private void FrmTaiKhoan_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.Equals(Keys.Escape))
+                this.Close();
+        }
     }
 }

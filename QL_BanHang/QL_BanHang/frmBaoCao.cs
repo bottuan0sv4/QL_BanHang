@@ -65,6 +65,10 @@ namespace QL_BanHang
             dataload();
         }
 
-       
+        private void frmBaoCao_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                this.Close();
+        }
     }
 }

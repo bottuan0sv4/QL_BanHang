@@ -56,7 +56,7 @@ namespace QL_BanHang
             // date_NgayTao
             // 
             this.date_NgayTao.EditValue = null;
-            this.date_NgayTao.Location = new System.Drawing.Point(633, 12);
+            this.date_NgayTao.Location = new System.Drawing.Point(544, 12);
             this.date_NgayTao.Name = "date_NgayTao";
             this.date_NgayTao.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -69,7 +69,7 @@ namespace QL_BanHang
             // 
             this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 8F);
             this.labelControl14.Appearance.Options.UseFont = true;
-            this.labelControl14.Location = new System.Drawing.Point(509, 15);
+            this.labelControl14.Location = new System.Drawing.Point(420, 15);
             this.labelControl14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(59, 17);
@@ -79,7 +79,7 @@ namespace QL_BanHang
             // cbMaKH
             // 
             this.cbMaKH.FormattingEnabled = true;
-            this.cbMaKH.Location = new System.Drawing.Point(131, 63);
+            this.cbMaKH.Location = new System.Drawing.Point(131, 41);
             this.cbMaKH.Margin = new System.Windows.Forms.Padding(4);
             this.cbMaKH.Name = "cbMaKH";
             this.cbMaKH.Size = new System.Drawing.Size(243, 24);
@@ -88,7 +88,7 @@ namespace QL_BanHang
             // 
             // txt_TenKH
             // 
-            this.txt_TenKH.Location = new System.Drawing.Point(633, 63);
+            this.txt_TenKH.Location = new System.Drawing.Point(544, 41);
             this.txt_TenKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_TenKH.Name = "txt_TenKH";
             this.txt_TenKH.Size = new System.Drawing.Size(235, 22);
@@ -98,7 +98,7 @@ namespace QL_BanHang
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 8F);
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(509, 66);
+            this.labelControl5.Location = new System.Drawing.Point(420, 44);
             this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(93, 16);
@@ -109,7 +109,7 @@ namespace QL_BanHang
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 8F);
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(11, 67);
+            this.labelControl4.Location = new System.Drawing.Point(11, 45);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(88, 16);
@@ -123,14 +123,14 @@ namespace QL_BanHang
             this.labelControl2.Location = new System.Drawing.Point(11, 15);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(85, 17);
+            this.labelControl2.Size = new System.Drawing.Size(97, 17);
             this.labelControl2.TabIndex = 85;
-            this.labelControl2.Text = "Số Phiếu Xuất";
+            this.labelControl2.Text = "Số Phiếu Xuất *";
             // 
             // bt_Huy
             // 
             this.bt_Huy.ImageOptions.SvgImage = global::QL_BanHang.Properties.Resources.paymentunpaid;
-            this.bt_Huy.Location = new System.Drawing.Point(486, 173);
+            this.bt_Huy.Location = new System.Drawing.Point(420, 115);
             this.bt_Huy.Name = "bt_Huy";
             this.bt_Huy.Size = new System.Drawing.Size(106, 43);
             this.bt_Huy.TabIndex = 84;
@@ -140,7 +140,7 @@ namespace QL_BanHang
             // bt_Xacnhan
             // 
             this.bt_Xacnhan.ImageOptions.Image = global::QL_BanHang.Properties.Resources.apply_32x32;
-            this.bt_Xacnhan.Location = new System.Drawing.Point(316, 173);
+            this.bt_Xacnhan.Location = new System.Drawing.Point(261, 115);
             this.bt_Xacnhan.Name = "bt_Xacnhan";
             this.bt_Xacnhan.Size = new System.Drawing.Size(113, 43);
             this.bt_Xacnhan.TabIndex = 83;
@@ -149,17 +149,17 @@ namespace QL_BanHang
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(384, 117);
+            this.labelControl1.Location = new System.Drawing.Point(329, 81);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(140, 17);
+            this.labelControl1.Size = new System.Drawing.Size(137, 17);
             this.labelControl1.TabIndex = 82;
-            this.labelControl1.Text = "Bạn Có Xác Nhận Xóa?";
+            this.labelControl1.Text = "Bạn có xác nhận xóa?";
             // 
             // frmXacNhanXoaDHX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 232);
+            this.ClientSize = new System.Drawing.Size(794, 171);
             this.Controls.Add(this.txt_SoPhieuXuat);
             this.Controls.Add(this.date_NgayTao);
             this.Controls.Add(this.labelControl14);
@@ -171,11 +171,13 @@ namespace QL_BanHang
             this.Controls.Add(this.bt_Huy);
             this.Controls.Add(this.bt_Xacnhan);
             this.Controls.Add(this.labelControl1);
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "frmXacNhanXoaDHX";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmXacNhanXoaDHX";
             this.Load += new System.EventHandler(this.frmXacNhanXoaDHX_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmXacNhanXoaDHX_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.txt_SoPhieuXuat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_NgayTao.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_NgayTao.Properties)).EndInit();

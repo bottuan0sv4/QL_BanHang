@@ -203,7 +203,11 @@ namespace QL_BanHang
             this.gv_HDNhap.GridControl = this.gc_HDNhap;
             this.gv_HDNhap.Name = "gv_HDNhap";
             this.gv_HDNhap.OptionsBehavior.Editable = false;
+            this.gv_HDNhap.OptionsView.ShowAutoFilterRow = true;
+            this.gv_HDNhap.OptionsView.ShowDetailButtons = false;
             this.gv_HDNhap.OptionsView.ShowGroupPanel = false;
+            this.gv_HDNhap.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn3, DevExpress.Data.ColumnSortOrder.Descending)});
             this.gv_HDNhap.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gv_HDNhap_FocusedRowChanged);
             // 
             // gridColumn1
@@ -216,7 +220,7 @@ namespace QL_BanHang
             // 
             // gridColumn2
             // 
-            this.gridColumn2.Caption = "Số Phiếu Nhập";
+            this.gridColumn2.Caption = "Số Phiếu Nhập *";
             this.gridColumn2.FieldName = "sophieunhap";
             this.gridColumn2.MinWidth = 27;
             this.gridColumn2.Name = "gridColumn2";
@@ -252,6 +256,7 @@ namespace QL_BanHang
             this.gridColumn3.FieldName = "ngaytao";
             this.gridColumn3.MinWidth = 27;
             this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 3;
             this.gridColumn3.Width = 100;
@@ -416,6 +421,7 @@ namespace QL_BanHang
             this.gv_CTHDNhap.Name = "gv_CTHDNhap";
             this.gv_CTHDNhap.OptionsBehavior.Editable = false;
             this.gv_CTHDNhap.OptionsView.ShowAutoFilterRow = true;
+            this.gv_CTHDNhap.OptionsView.ShowDetailButtons = false;
             this.gv_CTHDNhap.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn10
@@ -522,11 +528,13 @@ namespace QL_BanHang
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmHoaDonNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Hóa Đơn Nhập";
             this.Load += new System.EventHandler(this.frmHoaDonNhap_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmHoaDonNhap_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.gv_CTHDN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_HDNhap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_HDNhap)).EndInit();

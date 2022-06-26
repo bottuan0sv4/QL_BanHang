@@ -59,15 +59,13 @@ namespace QL_BanHang
             // 
             // gc_KhachHang
             // 
-            this.gc_KhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gc_KhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gc_KhachHang.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.gc_KhachHang.Location = new System.Drawing.Point(0, 50);
+            this.gc_KhachHang.Location = new System.Drawing.Point(0, 30);
             this.gc_KhachHang.MainView = this.gv_KhachHang;
             this.gc_KhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.gc_KhachHang.Name = "gc_KhachHang";
-            this.gc_KhachHang.Size = new System.Drawing.Size(1067, 479);
+            this.gc_KhachHang.Size = new System.Drawing.Size(1067, 524);
             this.gc_KhachHang.TabIndex = 5;
             this.gc_KhachHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_KhachHang});
@@ -86,6 +84,8 @@ namespace QL_BanHang
             this.gv_KhachHang.GridControl = this.gc_KhachHang;
             this.gv_KhachHang.Name = "gv_KhachHang";
             this.gv_KhachHang.OptionsBehavior.Editable = false;
+            this.gv_KhachHang.OptionsView.ShowAutoFilterRow = true;
+            this.gv_KhachHang.OptionsView.ShowDetailButtons = false;
             this.gv_KhachHang.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn1
@@ -98,7 +98,7 @@ namespace QL_BanHang
             // 
             // gridColumn2
             // 
-            this.gridColumn2.Caption = "Mã Khách Hàng";
+            this.gridColumn2.Caption = "Mã Khách Hàng *";
             this.gridColumn2.FieldName = "makh";
             this.gridColumn2.MinWidth = 27;
             this.gridColumn2.Name = "gridColumn2";
@@ -293,11 +293,13 @@ namespace QL_BanHang
             this.Controls.Add(this.barDockControl4);
             this.Controls.Add(this.barDockControl2);
             this.Controls.Add(this.barDockControl1);
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmKhachHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Danh Mục Khách Hàng";
             this.Load += new System.EventHandler(this.frmKhachHang_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmKhachHang_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.gc_KhachHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_KhachHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

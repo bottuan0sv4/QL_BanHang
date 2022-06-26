@@ -77,6 +77,7 @@ namespace QL_BanHang
             this.gv_BaoCao.Name = "gv_BaoCao";
             this.gv_BaoCao.OptionsBehavior.Editable = false;
             this.gv_BaoCao.OptionsView.ShowAutoFilterRow = true;
+            this.gv_BaoCao.OptionsView.ShowDetailButtons = false;
             this.gv_BaoCao.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn1
@@ -169,10 +170,12 @@ namespace QL_BanHang
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 450);
             this.Controls.Add(this.gc_BaoCao);
+            this.KeyPreview = true;
             this.Name = "frmBaoCao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Báo Cáo";
             this.Load += new System.EventHandler(this.frmBaoCao_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmBaoCao_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.gc_BaoCao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clsBaoCaoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_BaoCao)).EndInit();

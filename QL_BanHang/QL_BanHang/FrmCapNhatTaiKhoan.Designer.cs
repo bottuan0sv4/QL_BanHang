@@ -44,8 +44,7 @@ namespace QL_BanHang
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.date_NgaySinh = new DevExpress.XtraEditors.DateEdit();
             this.bt_Huy = new DevExpress.XtraEditors.SimpleButton();
-            this.bt_CapNhat = new DevExpress.XtraEditors.SimpleButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.bt_XacNhan = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Username.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_HoTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).BeginInit();
@@ -137,7 +136,7 @@ namespace QL_BanHang
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(669, 95);
+            this.labelControl6.Location = new System.Drawing.Point(688, 93);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(51, 17);
@@ -182,13 +181,13 @@ namespace QL_BanHang
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.date_NgaySinh.Properties.Mask.EditMask = "dd/MM/yyyy";
             this.date_NgaySinh.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.date_NgaySinh.Size = new System.Drawing.Size(133, 22);
+            this.date_NgaySinh.Size = new System.Drawing.Size(125, 22);
             this.date_NgaySinh.TabIndex = 19;
             // 
             // bt_Huy
             // 
             this.bt_Huy.ImageOptions.SvgImage = global::QL_BanHang.Properties.Resources.paymentunpaid;
-            this.bt_Huy.Location = new System.Drawing.Point(688, 155);
+            this.bt_Huy.Location = new System.Drawing.Point(688, 120);
             this.bt_Huy.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Huy.Name = "bt_Huy";
             this.bt_Huy.Size = new System.Drawing.Size(125, 46);
@@ -196,37 +195,28 @@ namespace QL_BanHang
             this.bt_Huy.Text = "Hủy";
             this.bt_Huy.Click += new System.EventHandler(this.bt_Huy_Click);
             // 
-            // bt_CapNhat
+            // bt_XacNhan
             // 
-            this.bt_CapNhat.ImageOptions.SvgImage = global::QL_BanHang.Properties.Resources.refreshallpivottable;
-            this.bt_CapNhat.Location = new System.Drawing.Point(555, 155);
-            this.bt_CapNhat.Margin = new System.Windows.Forms.Padding(4);
-            this.bt_CapNhat.Name = "bt_CapNhat";
-            this.bt_CapNhat.Size = new System.Drawing.Size(125, 46);
-            this.bt_CapNhat.TabIndex = 13;
-            this.bt_CapNhat.Text = "Cập Nhật";
-            this.bt_CapNhat.Click += new System.EventHandler(this.bt_CapNhat_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 183);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 17);
-            this.label1.TabIndex = 21;
+            this.bt_XacNhan.ImageOptions.Image = global::QL_BanHang.Properties.Resources.apply_32x32;
+            this.bt_XacNhan.Location = new System.Drawing.Point(516, 120);
+            this.bt_XacNhan.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_XacNhan.Name = "bt_XacNhan";
+            this.bt_XacNhan.Size = new System.Drawing.Size(125, 46);
+            this.bt_XacNhan.TabIndex = 13;
+            this.bt_XacNhan.Text = "Xác Nhận";
+            this.bt_XacNhan.Click += new System.EventHandler(this.bt_XacNhan_Click);
             // 
             // FrmCapNhatTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 214);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(827, 177);
             this.Controls.Add(this.bt_Huy);
             this.Controls.Add(this.date_NgaySinh);
             this.Controls.Add(this.txt_Pass);
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.txt_GioiTinh);
-            this.Controls.Add(this.bt_CapNhat);
+            this.Controls.Add(this.bt_XacNhan);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.labelControl5);
@@ -237,12 +227,14 @@ namespace QL_BanHang
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.txt_Username);
             this.Controls.Add(this.labelControl1);
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FrmCapNhatTaiKhoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cập Nhật Tài Khoản";
             this.Load += new System.EventHandler(this.FrmCapNhatTaiKhoan_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmCapNhatTaiKhoan_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.txt_Username.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_HoTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).EndInit();
@@ -272,8 +264,7 @@ namespace QL_BanHang
         private DevExpress.XtraEditors.TextEdit txt_Pass;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.DateEdit date_NgaySinh;
-        private DevExpress.XtraEditors.SimpleButton bt_CapNhat;
+        private DevExpress.XtraEditors.SimpleButton bt_XacNhan;
         private DevExpress.XtraEditors.SimpleButton bt_Huy;
-        private System.Windows.Forms.Label label1;
     }
 }

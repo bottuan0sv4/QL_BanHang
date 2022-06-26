@@ -46,6 +46,7 @@ namespace QL_BanHang
             this.xrTableCell15 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell16 = new DevExpress.XtraReports.UI.XRTableCell();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
+            this.xrLabel9 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
             this.txt_masothue = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
@@ -74,6 +75,13 @@ namespace QL_BanHang
             this.xrTableCell11 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell17 = new DevExpress.XtraReports.UI.XRTableCell();
             this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
+            this.txt_NgayLap = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel10 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel11 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel12 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel13 = new DevExpress.XtraReports.UI.XRLabel();
+            this.txt_ThangLap = new DevExpress.XtraReports.UI.XRLabel();
+            this.txt_NamLap = new DevExpress.XtraReports.UI.XRLabel();
             this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.objectDataSource1 = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
@@ -235,6 +243,7 @@ namespace QL_BanHang
             // ReportHeader
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel9,
             this.xrLabel8,
             this.txt_masothue,
             this.xrLabel2,
@@ -252,6 +261,19 @@ namespace QL_BanHang
             this.xrLabel1});
             this.ReportHeader.HeightF = 175F;
             this.ReportHeader.Name = "ReportHeader";
+            // 
+            // xrLabel9
+            // 
+            this.xrLabel9.Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.xrLabel9.Multiline = true;
+            this.xrLabel9.Name = "xrLabel9";
+            this.xrLabel9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel9.SizeF = new System.Drawing.SizeF(229.1667F, 23F);
+            this.xrLabel9.StylePriority.UseBorders = false;
+            this.xrLabel9.StylePriority.UseTextAlignment = false;
+            this.xrLabel9.Text = "CÔNG TY MỘT THÀNH VIÊN";
+            this.xrLabel9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel8
             // 
@@ -554,8 +576,104 @@ namespace QL_BanHang
             // PageFooter
             // 
             this.PageFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.txt_NgayLap,
+            this.xrLabel10,
+            this.xrLabel11,
+            this.xrLabel12,
+            this.xrLabel13,
+            this.txt_ThangLap,
+            this.txt_NamLap,
             this.xrPageInfo1});
             this.PageFooter.Name = "PageFooter";
+            // 
+            // txt_NgayLap
+            // 
+            this.txt_NgayLap.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic);
+            this.txt_NgayLap.LocationFloat = new DevExpress.Utils.PointFloat(543.0001F, 0F);
+            this.txt_NgayLap.Multiline = true;
+            this.txt_NgayLap.Name = "txt_NgayLap";
+            this.txt_NgayLap.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.txt_NgayLap.SizeF = new System.Drawing.SizeF(56.99976F, 23F);
+            this.txt_NgayLap.StylePriority.UseFont = false;
+            this.txt_NgayLap.StylePriority.UseTextAlignment = false;
+            this.txt_NgayLap.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.txt_NgayLap.TextFormatString = "{0:d}";
+            // 
+            // xrLabel10
+            // 
+            this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(600F, 22.99998F);
+            this.xrLabel10.Multiline = true;
+            this.xrLabel10.Name = "xrLabel10";
+            this.xrLabel10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel10.SizeF = new System.Drawing.SizeF(95F, 23F);
+            this.xrLabel10.StylePriority.UseTextAlignment = false;
+            this.xrLabel10.Text = "CHỮ KÝ";
+            this.xrLabel10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrLabel11
+            // 
+            this.xrLabel11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic);
+            this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(505.0001F, 0F);
+            this.xrLabel11.Multiline = true;
+            this.xrLabel11.Name = "xrLabel11";
+            this.xrLabel11.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel11.SizeF = new System.Drawing.SizeF(37.99997F, 23F);
+            this.xrLabel11.StylePriority.UseFont = false;
+            this.xrLabel11.StylePriority.UseTextAlignment = false;
+            this.xrLabel11.Text = "Ngày";
+            this.xrLabel11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrLabel12
+            // 
+            this.xrLabel12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic);
+            this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(599.9999F, 0F);
+            this.xrLabel12.Multiline = true;
+            this.xrLabel12.Name = "xrLabel12";
+            this.xrLabel12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel12.SizeF = new System.Drawing.SizeF(44.66666F, 23F);
+            this.xrLabel12.StylePriority.UseFont = false;
+            this.xrLabel12.StylePriority.UseTextAlignment = false;
+            this.xrLabel12.Text = "tháng";
+            this.xrLabel12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrLabel13
+            // 
+            this.xrLabel13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic);
+            this.xrLabel13.LocationFloat = new DevExpress.Utils.PointFloat(695.0002F, 0F);
+            this.xrLabel13.Multiline = true;
+            this.xrLabel13.Name = "xrLabel13";
+            this.xrLabel13.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel13.SizeF = new System.Drawing.SizeF(33.83331F, 23F);
+            this.xrLabel13.StylePriority.UseFont = false;
+            this.xrLabel13.StylePriority.UseTextAlignment = false;
+            this.xrLabel13.Text = "năm";
+            this.xrLabel13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // txt_ThangLap
+            // 
+            this.txt_ThangLap.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic);
+            this.txt_ThangLap.LocationFloat = new DevExpress.Utils.PointFloat(644.6666F, 0F);
+            this.txt_ThangLap.Multiline = true;
+            this.txt_ThangLap.Name = "txt_ThangLap";
+            this.txt_ThangLap.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.txt_ThangLap.SizeF = new System.Drawing.SizeF(50.16681F, 23F);
+            this.txt_ThangLap.StylePriority.UseFont = false;
+            this.txt_ThangLap.StylePriority.UseTextAlignment = false;
+            this.txt_ThangLap.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.txt_ThangLap.TextFormatString = "{0:d}";
+            // 
+            // txt_NamLap
+            // 
+            this.txt_NamLap.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic);
+            this.txt_NamLap.LocationFloat = new DevExpress.Utils.PointFloat(728.8333F, 0F);
+            this.txt_NamLap.Multiline = true;
+            this.txt_NamLap.Name = "txt_NamLap";
+            this.txt_NamLap.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.txt_NamLap.SizeF = new System.Drawing.SizeF(58.16663F, 23F);
+            this.txt_NamLap.StylePriority.UseFont = false;
+            this.txt_NamLap.StylePriority.UseTextAlignment = false;
+            this.txt_NamLap.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.txt_NamLap.TextFormatString = "{0:d}";
             // 
             // xrPageInfo1
             // 
@@ -644,5 +762,13 @@ namespace QL_BanHang
         private DevExpress.XtraReports.UI.XRLabel txt_masothue;
         private DevExpress.XtraReports.UI.PageFooterBand PageFooter;
         private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo1;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel9;
+        private DevExpress.XtraReports.UI.XRLabel txt_NgayLap;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel10;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel11;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel12;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel13;
+        private DevExpress.XtraReports.UI.XRLabel txt_ThangLap;
+        private DevExpress.XtraReports.UI.XRLabel txt_NamLap;
     }
 }

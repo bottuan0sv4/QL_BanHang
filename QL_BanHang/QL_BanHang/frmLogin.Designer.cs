@@ -42,7 +42,7 @@ namespace QL_BanHang
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 27);
+            this.label1.Location = new System.Drawing.Point(13, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 17);
             this.label1.TabIndex = 0;
@@ -51,7 +51,7 @@ namespace QL_BanHang
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 78);
+            this.label2.Location = new System.Drawing.Point(13, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 17);
             this.label2.TabIndex = 1;
@@ -59,14 +59,14 @@ namespace QL_BanHang
             // 
             // txt_Username
             // 
-            this.txt_Username.Location = new System.Drawing.Point(127, 24);
+            this.txt_Username.Location = new System.Drawing.Point(127, 14);
             this.txt_Username.Name = "txt_Username";
             this.txt_Username.Size = new System.Drawing.Size(241, 22);
             this.txt_Username.TabIndex = 2;
             // 
             // txt_Password
             // 
-            this.txt_Password.Location = new System.Drawing.Point(127, 75);
+            this.txt_Password.Location = new System.Drawing.Point(127, 42);
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Properties.UseSystemPasswordChar = true;
             this.txt_Password.Size = new System.Drawing.Size(241, 22);
@@ -76,7 +76,7 @@ namespace QL_BanHang
             // 
             this.bt_Dangnhap.Appearance.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Dangnhap.Appearance.Options.UseFont = true;
-            this.bt_Dangnhap.Location = new System.Drawing.Point(127, 121);
+            this.bt_Dangnhap.Location = new System.Drawing.Point(127, 72);
             this.bt_Dangnhap.Name = "bt_Dangnhap";
             this.bt_Dangnhap.Size = new System.Drawing.Size(94, 29);
             this.bt_Dangnhap.TabIndex = 4;
@@ -87,7 +87,7 @@ namespace QL_BanHang
             // 
             this.bt_Thoat.Appearance.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_Thoat.Appearance.Options.UseFont = true;
-            this.bt_Thoat.Location = new System.Drawing.Point(274, 121);
+            this.bt_Thoat.Location = new System.Drawing.Point(274, 72);
             this.bt_Thoat.Name = "bt_Thoat";
             this.bt_Thoat.Size = new System.Drawing.Size(94, 29);
             this.bt_Thoat.TabIndex = 5;
@@ -99,7 +99,7 @@ namespace QL_BanHang
             this.AcceptButton = this.bt_Dangnhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 163);
+            this.ClientSize = new System.Drawing.Size(383, 115);
             this.Controls.Add(this.bt_Thoat);
             this.Controls.Add(this.bt_Dangnhap);
             this.Controls.Add(this.txt_Password);

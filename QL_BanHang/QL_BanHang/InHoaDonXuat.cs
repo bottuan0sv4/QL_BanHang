@@ -33,6 +33,9 @@ namespace QL_BanHang
             txt_makh.Text = obj.makh;
             txt_sdt.Text = obj.sdt;
             txt_ngaytao.Text = obj.ngaytao.ToString("dd/MM/yyyy");
+            txt_NgayLap.Text = obj.ngaytao.ToString("dd");
+            txt_ThangLap.Text = obj.ngaytao.ToString("MM");
+            txt_NamLap.Text = obj.ngaytao.ToString("yyyy");
             txt_masothue.Text = Convert.ToString(obj.masothue);
         }
 

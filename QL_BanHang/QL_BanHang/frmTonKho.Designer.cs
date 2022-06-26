@@ -95,6 +95,8 @@ namespace QL_BanHang
             this.gv_TonKho.OptionsView.ShowAutoFilterRow = true;
             this.gv_TonKho.OptionsView.ShowDetailButtons = false;
             this.gv_TonKho.OptionsView.ShowGroupPanel = false;
+            this.gv_TonKho.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn9, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // gridColumn6
             // 
@@ -206,10 +208,12 @@ namespace QL_BanHang
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1085, 394);
             this.Controls.Add(this.gc_TonKho);
+            this.KeyPreview = true;
             this.Name = "frmTonKho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tồn Kho";
             this.Load += new System.EventHandler(this.frmTonKho_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmTonKho_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clsTonKhoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();

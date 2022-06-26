@@ -36,6 +36,7 @@ namespace QL_BanHang
             this.navButton2 = new DevExpress.XtraBars.Navigation.NavButton();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.bt_dang_xuat = new DevExpress.XtraBars.BarButtonItem();
+            this.bt_thoat = new DevExpress.XtraBars.BarButtonItem();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bt_dangxuat_ = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
@@ -57,6 +58,7 @@ namespace QL_BanHang
             this.bt_dangxuat = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.btdangxuat = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.p_TrangChu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.p_DanhMuc = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -69,15 +71,12 @@ namespace QL_BanHang
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.p_BaoCao = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.tileNavCategory2 = new DevExpress.XtraBars.Navigation.TileNavCategory();
             this.tileBarItem1 = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.bt_thoat = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -104,7 +103,16 @@ namespace QL_BanHang
             this.bt_dang_xuat.Caption = "Đăng Xuất";
             this.bt_dang_xuat.Id = 24;
             this.bt_dang_xuat.Name = "bt_dang_xuat";
+            this.bt_dang_xuat.SmallWithTextWidth = 60;
             this.bt_dang_xuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_dang_xuat_ItemClick);
+            // 
+            // bt_thoat
+            // 
+            this.bt_thoat.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.bt_thoat.Caption = "Thoát";
+            this.bt_thoat.Id = 26;
+            this.bt_thoat.Name = "bt_thoat";
+            this.bt_thoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_thoat_ItemClick);
             // 
             // ribbon
             // 
@@ -165,6 +173,7 @@ namespace QL_BanHang
             this.bt_TrangChu.Caption = "Trang Chủ";
             this.bt_TrangChu.Id = 2;
             this.bt_TrangChu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bt_TrangChu.ImageOptions.SvgImage")));
+            this.bt_TrangChu.LargeWidth = 60;
             this.bt_TrangChu.Name = "bt_TrangChu";
             this.bt_TrangChu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_TrangChu_ItemClick_1);
             // 
@@ -173,6 +182,7 @@ namespace QL_BanHang
             this.bt_KhachHang.Caption = "Khách Hàng";
             this.bt_KhachHang.Id = 3;
             this.bt_KhachHang.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bt_KhachHang.ImageOptions.SvgImage")));
+            this.bt_KhachHang.LargeWidth = 60;
             this.bt_KhachHang.Name = "bt_KhachHang";
             this.bt_KhachHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_KhachHang_ItemClick);
             // 
@@ -181,6 +191,7 @@ namespace QL_BanHang
             this.bt_SanPham.Caption = "Sản Phẩm";
             this.bt_SanPham.Id = 4;
             this.bt_SanPham.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bt_SanPham.ImageOptions.SvgImage")));
+            this.bt_SanPham.LargeWidth = 60;
             this.bt_SanPham.Name = "bt_SanPham";
             this.bt_SanPham.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_SanPham_ItemClick_1);
             // 
@@ -189,6 +200,7 @@ namespace QL_BanHang
             this.bt_Kho.Caption = "Kho";
             this.bt_Kho.Id = 5;
             this.bt_Kho.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bt_Kho.ImageOptions.SvgImage")));
+            this.bt_Kho.LargeWidth = 60;
             this.bt_Kho.Name = "bt_Kho";
             this.bt_Kho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_Kho_ItemClick);
             // 
@@ -197,6 +209,7 @@ namespace QL_BanHang
             this.bt_HDNhap.Caption = "Hóa Đơn Nhập";
             this.bt_HDNhap.Id = 6;
             this.bt_HDNhap.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bt_HDNhap.ImageOptions.SvgImage")));
+            this.bt_HDNhap.LargeWidth = 60;
             this.bt_HDNhap.Name = "bt_HDNhap";
             this.bt_HDNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_HDNhap_ItemClick);
             // 
@@ -205,6 +218,7 @@ namespace QL_BanHang
             this.bt_HDXuat.Caption = "Hóa Đơn Xuất";
             this.bt_HDXuat.Id = 7;
             this.bt_HDXuat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bt_HDXuat.ImageOptions.SvgImage")));
+            this.bt_HDXuat.LargeWidth = 60;
             this.bt_HDXuat.Name = "bt_HDXuat";
             this.bt_HDXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_HDXuat_ItemClick_1);
             // 
@@ -213,6 +227,7 @@ namespace QL_BanHang
             this.bt_BaoCao.Caption = "Báo Cáo";
             this.bt_BaoCao.Id = 8;
             this.bt_BaoCao.ImageOptions.SvgImage = global::QL_BanHang.Properties.Resources.business_report;
+            this.bt_BaoCao.LargeWidth = 60;
             this.bt_BaoCao.Name = "bt_BaoCao";
             this.bt_BaoCao.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_BaoCao_ItemClick);
             // 
@@ -226,6 +241,7 @@ namespace QL_BanHang
             this.bt_Acc.Caption = "Tài Khoản";
             this.bt_Acc.Id = 11;
             this.bt_Acc.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bt_Acc.ImageOptions.SvgImage")));
+            this.bt_Acc.LargeWidth = 60;
             this.bt_Acc.Name = "bt_Acc";
             this.bt_Acc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_Acc_ItemClick);
             // 
@@ -240,6 +256,7 @@ namespace QL_BanHang
             this.bt_NhaCC.Caption = "Nhà Cung Cấp";
             this.bt_NhaCC.Id = 13;
             this.bt_NhaCC.ImageOptions.SvgImage = global::QL_BanHang.Properties.Resources.bo_organization;
+            this.bt_NhaCC.LargeWidth = 60;
             this.bt_NhaCC.Name = "bt_NhaCC";
             this.bt_NhaCC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_NhaCC_ItemClick);
             // 
@@ -269,6 +286,7 @@ namespace QL_BanHang
             this.btTonKho.Id = 18;
             this.btTonKho.ImageOptions.Image = global::QL_BanHang.Properties.Resources.boproductgroup_16x161;
             this.btTonKho.ImageOptions.LargeImage = global::QL_BanHang.Properties.Resources.boproductgroup_32x321;
+            this.btTonKho.LargeWidth = 60;
             this.btTonKho.Name = "btTonKho";
             this.btTonKho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btTonKho_ItemClick);
             // 
@@ -289,6 +307,12 @@ namespace QL_BanHang
             this.btdangxuat.Caption = "Đăng Xuất";
             this.btdangxuat.Id = 22;
             this.btdangxuat.Name = "btdangxuat";
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "barButtonItem5";
+            this.barButtonItem5.Id = 25;
+            this.barButtonItem5.Name = "barButtonItem5";
             // 
             // p_TrangChu
             // 
@@ -360,15 +384,9 @@ namespace QL_BanHang
             // p_BaoCao
             // 
             this.p_BaoCao.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup8,
             this.ribbonPageGroup11});
             this.p_BaoCao.Name = "p_BaoCao";
             this.p_BaoCao.Text = "Báo Cáo";
-            // 
-            // ribbonPageGroup8
-            // 
-            this.ribbonPageGroup8.ItemLinks.Add(this.bt_BaoCao);
-            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             // 
             // ribbonPageGroup11
             // 
@@ -410,20 +428,6 @@ namespace QL_BanHang
             this.barButtonItem2.ImageOptions.Image = global::QL_BanHang.Properties.Resources.boproductgroup_16x16;
             this.barButtonItem2.ImageOptions.LargeImage = global::QL_BanHang.Properties.Resources.boproductgroup_32x32;
             this.barButtonItem2.Name = "barButtonItem2";
-            // 
-            // barButtonItem5
-            // 
-            this.barButtonItem5.Caption = "barButtonItem5";
-            this.barButtonItem5.Id = 25;
-            this.barButtonItem5.Name = "barButtonItem5";
-            // 
-            // bt_thoat
-            // 
-            this.bt_thoat.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.bt_thoat.Caption = "Thoát";
-            this.bt_thoat.Id = 26;
-            this.bt_thoat.Name = "bt_thoat";
-            this.bt_thoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_thoat_ItemClick);
             // 
             // TrangChu
             // 
@@ -477,7 +481,6 @@ namespace QL_BanHang
         private DevExpress.XtraBars.BarButtonItem bt_HDNhap;
         private DevExpress.XtraBars.BarButtonItem bt_HDXuat;
         private DevExpress.XtraBars.BarButtonItem bt_BaoCao;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.BarButtonItem bt_TK;
         private DevExpress.XtraBars.BarButtonItem bt_Acc;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;

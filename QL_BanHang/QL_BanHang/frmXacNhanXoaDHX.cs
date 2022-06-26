@@ -79,5 +79,11 @@ namespace QL_BanHang
                 txt_TenKH.Text = kh.tenkh;
             }
         }
+
+        private void frmXacNhanXoaDHX_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.Equals(Keys.Escape))
+                this.Close();
+        }
     }
 }

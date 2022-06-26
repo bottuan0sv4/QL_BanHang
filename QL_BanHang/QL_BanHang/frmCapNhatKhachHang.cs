@@ -24,60 +24,6 @@ namespace QL_BanHang
 
         }
 
-        private void bt_ClickCapNhat(object sender, EventArgs e)
-        {
-            try
-            {
-                if (them)
-                {
-                    kh.makh = txt_MaKH.Text;
-                    kh.tenkh = txt_TenKH.Text;
-                    kh.diachi = txt_DiaChi.Text;
-                    kh.sdt = txt_SDT.Text;
-                    kh.gioitinh = txt_GioiTinh.Text;
-                    kh.masothue = Convert.ToDouble(txt_MSThue.EditValue);
-                    db.KHs.InsertOnSubmit(kh);
-                    db.SubmitChanges();
-                    frmKhachHang_Load(sender, e);
-                    this.DialogResult = DialogResult.Cancel;
-                }
-                else
-                {
-                    if (xoa)
-                    {
-                        kh = db.KHs.Where(s => s.makh == txt_MaKH.Text).FirstOrDefault();
-                        kh.tenkh = txt_TenKH.Text;
-                        kh.diachi = txt_DiaChi.Text;
-                        kh.sdt = txt_SDT.Text;
-                        kh.gioitinh = txt_GioiTinh.Text;
-                        kh.masothue = Convert.ToDouble(txt_MSThue.EditValue);
-                        db.KHs.DeleteOnSubmit(kh);
-                        db.SubmitChanges();
-                        frmKhachHang_Load(sender, e);
-                        this.DialogResult = DialogResult.Cancel;
-                    }
-                    else
-                    {
-                        kh = db.KHs.Where(s => s.makh == txt_MaKH.Text).FirstOrDefault();
-                        kh.tenkh = txt_TenKH.Text;
-                        kh.diachi = txt_DiaChi.Text;
-                        kh.sdt = txt_SDT.Text;
-                        kh.gioitinh = txt_GioiTinh.Text;
-                        kh.masothue = Convert.ToDouble(txt_MSThue.EditValue);
-                        db.SubmitChanges();
-                        frmKhachHang_Load(sender, e);
-                        this.DialogResult = DialogResult.Cancel;
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Xin hãy nhập dữ liệu!", "Error");
-            }
-            
-           
-        }
-
 
 
         private void frmCapNhatKhachHang_Load(object sender, EventArgs e)
@@ -106,12 +52,26 @@ namespace QL_BanHang
 
         private void txt_MSThue_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if(char.IsDigit(e.KeyChar) || e.KeyChar == '.' || e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
 
         private void txt_SDT_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == '+' || e.KeyChar == '(' || e.KeyChar == ')' || e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
 
         private void label2_TextChanged(object sender, EventArgs e)
@@ -121,7 +81,7 @@ namespace QL_BanHang
 
         private void txt_MSThue_TextChanged(object sender, EventArgs e)
         {
-            double n;
+            /*double n;
             if (double.TryParse(txt_MSThue.Text,out n))
             {
                 label1.ForeColor = Color.Green;
@@ -131,12 +91,12 @@ namespace QL_BanHang
             {
                 label1.ForeColor = Color.Red;
                 label1.Text = "Error! Vui lòng nhập số!";
-            }
+            }*/
         }
 
         private void txt_SDT_TextChanged(object sender, EventArgs e)
         {
-            long n;
+            /*long n;
             if (long.TryParse(txt_SDT.Text, out n))
             {
                 label1.ForeColor = Color.Green;
@@ -146,7 +106,71 @@ namespace QL_BanHang
             {
                 label1.ForeColor = Color.Red;
                 label1.Text = "Error! Vui lòng nhập số!";
-            }
+            }*/
+        }
+
+        private void bt_ClickXacNhan(object sender, EventArgs e)
+        {
+ 
+                if (them)
+                {
+                    kh.makh = txt_MaKH.Text;
+                    kh.tenkh = txt_TenKH.Text;
+                    kh.diachi = txt_DiaChi.Text;
+                    kh.sdt = txt_SDT.Text;
+                    kh.gioitinh = txt_GioiTinh.Text;
+                    kh.masothue = Convert.ToDouble(txt_MSThue.EditValue);
+                if (string.IsNullOrEmpty(kh.makh))
+                {
+                    MessageBox.Show("Hãy nhập dữ liệu!", "Error");
+                }
+                else
+                {
+                    db.KHs.InsertOnSubmit(kh);
+                    db.SubmitChanges();
+                    frmKhachHang_Load(sender, e);
+                    this.DialogResult = DialogResult.Cancel;
+                }
+                    
+                }
+
+
+                else
+                {
+                    if (xoa)
+                    {
+                        kh = db.KHs.Where(s => s.makh == txt_MaKH.Text).FirstOrDefault();
+                        kh.tenkh = txt_TenKH.Text;
+                        kh.diachi = txt_DiaChi.Text;
+                        kh.sdt = txt_SDT.Text;
+                        kh.gioitinh = txt_GioiTinh.Text;
+                        kh.masothue = Convert.ToDouble(txt_MSThue.EditValue);
+                        db.KHs.DeleteOnSubmit(kh);
+                        db.SubmitChanges();
+                        frmKhachHang_Load(sender, e);
+                        this.DialogResult = DialogResult.Cancel;
+                    }
+                    else
+                    {
+                        kh = db.KHs.Where(s => s.makh == txt_MaKH.Text).FirstOrDefault();
+                        kh.tenkh = txt_TenKH.Text;
+                        kh.diachi = txt_DiaChi.Text;
+                        kh.sdt = txt_SDT.Text;
+                        kh.gioitinh = txt_GioiTinh.Text;
+                        kh.masothue = Convert.ToDouble(txt_MSThue.EditValue);
+                        db.SubmitChanges();
+                        frmKhachHang_Load(sender, e);
+                        this.DialogResult = DialogResult.Cancel;
+                    }
+                }
+                
+                
+        }
+
+        private void frmCapNhatKhachHang_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.Equals(Keys.Escape))
+                this.Close();
         }
     }
 }

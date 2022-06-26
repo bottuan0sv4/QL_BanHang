@@ -113,18 +113,24 @@ namespace QL_BanHang
 
         private void bt_Luu_HD_Click(object sender, EventArgs e)
         {
-            try {
-                if (themmoi)
+            if (themmoi)
+            {
+                hdn.sophieunhap = txt_SoPhieuNhap.Text;
+                hdn.mancc = cbMaNCC.Text;
+                hdn.ngaytao = (DateTime)date_NgayTao.DateTime;
+                var list = (from p in db.NCCs
+                            where cbMaNCC.Text == p.mancc
+                            select p.ID_NCC).SingleOrDefault();
+                hdn.ID_NCC = list;
+
+
+                if (string.IsNullOrEmpty(hdn.sophieunhap))
                 {
-                    hdn.sophieunhap = txt_SoPhieuNhap.Text;
-                    hdn.mancc = cbMaNCC.Text;
-                    hdn.ngaytao = (DateTime)date_NgayTao.DateTime;
-                    var list = (from p in db.NCCs
-                                where cbMaNCC.Text == p.mancc
-                                select p.ID_NCC).SingleOrDefault();
-                    hdn.ID_NCC = list;
-
-
+                    MessageBox.Show("Hãy nhập dữ liệu!", "Error");
+                }
+                else
+                {
+                    
                     foreach (var item in lstchitiet)
                     {
                         CT_HDNhap ct = new CT_HDNhap();
@@ -143,65 +149,65 @@ namespace QL_BanHang
 
                         hdn.CT_HDNhaps.Add(ct);
                     }
-
-
                     db.HDNhaps.InsertOnSubmit(hdn);
                     db.SubmitChanges();
                     frmHoaDonNhap_Load(sender, e);
                     this.DialogResult = DialogResult.Cancel;
                 }
-                else
-                {
-                    HDNhap hdns = (from ds in db.HDNhaps where ds.ID_HDNhap == hdNhap.ID_HDNhap select ds).FirstOrDefault();
-
-                    hdns.sophieunhap = txt_SoPhieuNhap.Text;
-                    hdns.mancc = cbMaNCC.Text;
-                    hdns.ngaytao = (DateTime)date_NgayTao.DateTime;
-                    var list = (from p in db.NCCs
-                                where cbMaNCC.Text == p.mancc
-                                select p.ID_NCC).SingleOrDefault();
-                    hdns.ID_NCC = list;
-
-                    foreach (var item in from ds in db.CT_HDNhaps where ds.ID_HDNhap == hdns.ID_HDNhap select ds)
-                    {
-                        db.CT_HDNhaps.DeleteOnSubmit(item);
-                    }
-                    foreach (var item in lstchitiet)
-                    {
-                        CT_HDNhap ct = new CT_HDNhap();
-                        ct.makho = item.makho;
-                        ct.masp = item.masp;
-                        ct.soluong = item.soluong;
-                        ct.chietkhau = item.chietkhau;
-                        ct.thanhtien = item.thanhtien;
-
-                        ct.ID_Kho = (from p in db.Khos
-                                     where item.makho == p.makho
-                                     select p.ID_Kho).SingleOrDefault();
-
-                        ct.ID_SP = (from p in db.SanPhams
-                                    where item.masp == p.masp
-                                    select p.ID_SP).SingleOrDefault();
-
-                        ct.ID_HDNhap = (from p in db.HDNhaps
-                                        where txt_SoPhieuNhap.Text == p.sophieunhap
-                                        select p.ID_HDNhap).SingleOrDefault();
-                        ct.ID_CTHDN = item.ID_CTHDN;
-
-                        hdns.CT_HDNhaps.Add(ct);
-                    }
-                    db.SubmitChanges();
-                    frmHoaDonNhap_Load(sender, e);
-
-                    this.DialogResult = DialogResult.Cancel;
-
-
-                }
+                    
+                
+                    
             }
-                catch (Exception)
+
+        
+            else
+            {
+                HDNhap hdns = (from ds in db.HDNhaps where ds.ID_HDNhap == hdNhap.ID_HDNhap select ds).FirstOrDefault();
+
+                hdns.sophieunhap = txt_SoPhieuNhap.Text;
+                hdns.mancc = cbMaNCC.Text;
+                hdns.ngaytao = (DateTime)date_NgayTao.DateTime;
+                var list = (from p in db.NCCs
+                            where cbMaNCC.Text == p.mancc
+                            select p.ID_NCC).SingleOrDefault();
+                hdns.ID_NCC = list;
+
+                foreach (var item in from ds in db.CT_HDNhaps where ds.ID_HDNhap == hdns.ID_HDNhap select ds)
                 {
-                    MessageBox.Show("Xin hãy nhập dữ liệu!", "Error");
+                    db.CT_HDNhaps.DeleteOnSubmit(item);
                 }
+                foreach (var item in lstchitiet)
+                {
+                    CT_HDNhap ct = new CT_HDNhap();
+                    ct.makho = item.makho;
+                    ct.masp = item.masp;
+                    ct.soluong = item.soluong;
+                    ct.chietkhau = item.chietkhau;
+                    ct.thanhtien = item.thanhtien;
+
+                    ct.ID_Kho = (from p in db.Khos
+                                 where item.makho == p.makho
+                                 select p.ID_Kho).SingleOrDefault();
+
+                    ct.ID_SP = (from p in db.SanPhams
+                                where item.masp == p.masp
+                                select p.ID_SP).SingleOrDefault();
+
+                    ct.ID_HDNhap = (from p in db.HDNhaps
+                                    where txt_SoPhieuNhap.Text == p.sophieunhap
+                                    select p.ID_HDNhap).SingleOrDefault();
+                    ct.ID_CTHDN = item.ID_CTHDN;
+
+                    hdns.CT_HDNhaps.Add(ct);
+                }
+                db.SubmitChanges();
+                frmHoaDonNhap_Load(sender, e);
+
+                this.DialogResult = DialogResult.Cancel;
+
+
+            }
+            
             
 
         }
@@ -239,15 +245,42 @@ namespace QL_BanHang
                     txt_DonGia.ResetText();
             
                 }
-                catch (Exception)
+                catch (Exception )
                 {
-                    MessageBox.Show("Xin hãy nhập dữ liệu", "Error");
+                    MessageBox.Show("Xin hãy nhập dữ liệu", "Error" );
                 }
                 
 
             }
             else
             {
+
+                lstchitiet.Add(new clsCTHDNhap()
+                {
+                    ID_Kho = (from p in db.Khos
+                              where cbMaKho.Text == p.makho
+                              select p.ID_Kho).FirstOrDefault(),
+                    makho = cbMaKho.Text,
+                    tenkho = txt_TenKho.Text,
+                    ID_SP = (from p in db.SanPhams
+                             where cbMaSP.Text == p.masp
+                             select p.ID_SP).FirstOrDefault(),
+                    masp = cbMaSP.Text,
+                    tensp = txt_TenSP.Text,
+                    soluong = Convert.ToInt32(txt_SoLuong.EditValue),
+                    dongia = Convert.ToDouble(txt_DonGia.EditValue),
+                    chietkhau = Convert.ToDouble(txt_ChietKhau.EditValue),
+                    thanhtien = ((Convert.ToDouble(txt_ChietKhau.EditValue) * Convert.ToDouble(txt_DonGia.EditValue) * Convert.ToInt32(txt_SoLuong.EditValue)) - (Convert.ToDouble(txt_ChietKhau.EditValue) * Convert.ToDouble(txt_DonGia.EditValue) * Convert.ToInt32(txt_SoLuong.EditValue)) / 100)
+                });
+
+                cbMaKho.ResetText();
+                cbMaSP.ResetText();
+                txt_SoLuong.ResetText();
+                txt_ChietKhau.ResetText();
+                txt_TenKho.ResetText();
+                txt_TenSP.ResetText();
+                txt_DonGia.ResetText();
+
                 lstchitiet.AddRange(lstSource);
             }
             cbMaNCC.Items.Clear();
@@ -291,7 +324,7 @@ namespace QL_BanHang
             {
 
                 var b = (from ds in lstSource where ds.masp == obj.ToString() select ds).FirstOrDefault();
-                if (b.soluong != null && b.dongia != null && b.chietkhau != null)
+                if (b.soluong != 0 && b.dongia != 0 && b.chietkhau != 0)
                 {
                     if (b != null)
                     {
@@ -305,17 +338,31 @@ namespace QL_BanHang
 
         private void txt_SoLuong_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
 
         private void txt_ChietKhau_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == 8 || e.KeyChar == '.')
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
 
         private void txt_SoLuong_TextChanged(object sender, EventArgs e)
         {
-            long n;
+            /*long n;
             if(long.TryParse(txt_SoLuong.Text, out n))
             {
                 label2.ForeColor = Color.Green;
@@ -325,12 +372,12 @@ namespace QL_BanHang
             {
                 label2.ForeColor = Color.Red;
                 label2.Text = "Error! Vui lòng nhập số!";
-            }
+            }*/
         }
 
         private void txt_ChietKhau_TextChanged(object sender, EventArgs e)
         {
-            double n;
+           /* double n;
             if (double.TryParse(txt_ChietKhau.Text, out n))
             {
                 label2.ForeColor = Color.Green;
@@ -340,12 +387,12 @@ namespace QL_BanHang
             {
                 label2.ForeColor = Color.Red;
                 label2.Text = "Error! Vui lòng nhập số!";
-            }
+            }*/
         }
 
         private void txt_SoPhieuNhap_TextChanged(object sender, EventArgs e)
         {
-            long n;
+            /*long n;
             if (long.TryParse(txt_SoPhieuNhap.Text, out n))
             {
                 label1.ForeColor = Color.Green;
@@ -355,9 +402,55 @@ namespace QL_BanHang
             {
                 label1.ForeColor = Color.Red;
                 label1.Text = "Error! Vui lòng nhập số!";
+            }*/
+        }
+
+        private void labelControl3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_TenKho_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelControl7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_TenSP_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelControl9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_DonGia_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_SoPhieuNhap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(char.IsDigit(e.KeyChar) || e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
 
-        
+        private void frmCapNhatHDNhap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.Equals(Keys.Escape))
+                this.Close();
+        }
     }
 }

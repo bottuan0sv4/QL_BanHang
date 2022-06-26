@@ -40,20 +40,57 @@ namespace QL_BanHang
 
         }
 
-        private void bt_CapNhat_Click(object sender, EventArgs e)
+        private void bt_Huy_Click(object sender, EventArgs e)
         {
-            try
+            this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void txt_SDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == '+' || e.KeyChar == '(' || e.KeyChar == ')' || e.KeyChar == 8)
             {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_SDT_TextChanged(object sender, EventArgs e)
+        {
+            /*long n;
+            if (long.TryParse(txt_SDT.Text, out n))
+            {
+                label1.ForeColor = Color.Green;
+                label1.Text = "Successful!";
+            }
+            else
+            {
+                label1.ForeColor = Color.Red;
+                label1.Text = "Error! Vui lòng nhập số!";
+            }*/
+        }
+
+        private void bt_XacNhan_Click(object sender, EventArgs e)
+        {
+
                 if (themmoi)
                 {
                     ncc.mancc = txt_MaNCC.Text;
                     ncc.tenncc = txt_TenNCC.Text;
                     ncc.diachi = txt_DiaChi.Text;
                     ncc.sdt = txt_SDT.Text;
+                if (string.IsNullOrEmpty(ncc.mancc)) {
+                    MessageBox.Show("Hãy nhập dữ liệu!","Error");
+                }
+                else
+                {
                     db.NCCs.InsertOnSubmit(ncc);
                     db.SubmitChanges();
                     frmNhaCC_Load(sender, e);
                     this.DialogResult = DialogResult.Cancel;
+                }
                 }
                 else
                 {
@@ -79,37 +116,13 @@ namespace QL_BanHang
                         this.DialogResult = DialogResult.Cancel;
                     }
                 }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Xin hãy nhập dữ liệu!", "Error");
-            }
-            
+               
         }
 
-        private void bt_Huy_Click(object sender, EventArgs e)
+        private void frmCapNhatNCC_KeyDown(object sender, KeyEventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
-        }
-
-        private void txt_SDT_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-        private void txt_SDT_TextChanged(object sender, EventArgs e)
-        {
-            long n;
-            if (long.TryParse(txt_SDT.Text, out n))
-            {
-                label1.ForeColor = Color.Green;
-                label1.Text = "Successful!";
-            }
-            else
-            {
-                label1.ForeColor = Color.Red;
-                label1.Text = "Error! Vui lòng nhập số!";
-            }
+            if (e.KeyCode.Equals(Keys.Escape))
+                this.Close();
         }
     }
 }

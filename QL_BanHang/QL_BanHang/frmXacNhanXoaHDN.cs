@@ -76,5 +76,11 @@ namespace QL_BanHang
                 txt_TenNCC.Text = ncc.tenncc;
             }
         }
+
+        private void frmXacNhanXoaHDN_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.Equals(Keys.Escape))
+                this.Close();
+        }
     }
 }

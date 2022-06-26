@@ -90,6 +90,8 @@ namespace QL_BanHang
             this.gv_TaiKhoan.GridControl = this.gc_TaiKhoan;
             this.gv_TaiKhoan.Name = "gv_TaiKhoan";
             this.gv_TaiKhoan.OptionsBehavior.Editable = false;
+            this.gv_TaiKhoan.OptionsView.ShowAutoFilterRow = true;
+            this.gv_TaiKhoan.OptionsView.ShowDetailButtons = false;
             this.gv_TaiKhoan.OptionsView.ShowGroupPanel = false;
             // 
             // ID_TK
@@ -108,7 +110,7 @@ namespace QL_BanHang
             this.gridColumn2.MinWidth = 27;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
+            this.gridColumn2.VisibleIndex = 2;
             this.gridColumn2.Width = 100;
             // 
             // gridColumn3
@@ -118,7 +120,7 @@ namespace QL_BanHang
             this.gridColumn3.MinWidth = 27;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 1;
+            this.gridColumn3.VisibleIndex = 3;
             this.gridColumn3.Width = 100;
             // 
             // gridColumn4
@@ -130,7 +132,7 @@ namespace QL_BanHang
             this.gridColumn4.MinWidth = 27;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 2;
+            this.gridColumn4.VisibleIndex = 4;
             this.gridColumn4.Width = 100;
             // 
             // gridColumn5
@@ -140,7 +142,7 @@ namespace QL_BanHang
             this.gridColumn5.MinWidth = 27;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 3;
+            this.gridColumn5.VisibleIndex = 5;
             this.gridColumn5.Width = 100;
             // 
             // gridColumn6
@@ -150,7 +152,7 @@ namespace QL_BanHang
             this.gridColumn6.MinWidth = 27;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 4;
+            this.gridColumn6.VisibleIndex = 6;
             this.gridColumn6.Width = 100;
             // 
             // gridColumn7
@@ -160,7 +162,7 @@ namespace QL_BanHang
             this.gridColumn7.MinWidth = 27;
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 5;
+            this.gridColumn7.VisibleIndex = 0;
             this.gridColumn7.Width = 100;
             // 
             // gridColumn8
@@ -170,7 +172,7 @@ namespace QL_BanHang
             this.gridColumn8.MinWidth = 27;
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 6;
+            this.gridColumn8.VisibleIndex = 1;
             this.gridColumn8.Width = 100;
             // 
             // bandedGridView1
@@ -304,11 +306,13 @@ namespace QL_BanHang
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmTaiKhoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Danh mục tài khoản";
             this.Load += new System.EventHandler(this.FrmTaiKhoan_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmTaiKhoan_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.gc_TaiKhoan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_TaiKhoan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bandedGridView1)).EndInit();

@@ -237,6 +237,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rptBangTongHopLuongSXKD.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptBangTongHopLuongSXKD.Designer.cs">
+      <DependentUpon>rptBangTongHopLuongSXKD.cs</DependentUpon>
+    </Compile>
     <Compile Include="TrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -323,6 +329,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="rptBangTongHopLuongSXKD.resx">
+      <DependentUpon>rptBangTongHopLuongSXKD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TrangChu.resx">
       <DependentUpon>TrangChu.cs</DependentUpon>
     </EmbeddedResource>

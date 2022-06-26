@@ -167,6 +167,8 @@ namespace QL_BanHang
             this.gv_SanPham.GridControl = this.gc_SanPham;
             this.gv_SanPham.Name = "gv_SanPham";
             this.gv_SanPham.OptionsBehavior.Editable = false;
+            this.gv_SanPham.OptionsView.ShowAutoFilterRow = true;
+            this.gv_SanPham.OptionsView.ShowDetailButtons = false;
             this.gv_SanPham.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn1
@@ -179,10 +181,11 @@ namespace QL_BanHang
             // 
             // gridColumn7
             // 
-            this.gridColumn7.Caption = "Mã Sản Phẩm";
+            this.gridColumn7.Caption = "Mã Sản Phẩm *";
             this.gridColumn7.FieldName = "masp";
             this.gridColumn7.MinWidth = 27;
             this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 0;
             this.gridColumn7.Width = 100;
@@ -227,6 +230,7 @@ namespace QL_BanHang
             this.gridColumn5.FieldName = "ngaytao";
             this.gridColumn5.MinWidth = 27;
             this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
             this.gridColumn5.Width = 100;
@@ -241,11 +245,13 @@ namespace QL_BanHang
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmSanPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Sản Phẩm";
             this.Load += new System.EventHandler(this.frmSanPham_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmSanPham_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_SanPham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_SanPham)).EndInit();

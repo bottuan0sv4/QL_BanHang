@@ -101,5 +101,11 @@ namespace QL_BanHang
         {
             dataload();
         }
+
+        private void frmTonKho_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.Equals(Keys.Escape))
+                this.Close();
+        }
     }
 }

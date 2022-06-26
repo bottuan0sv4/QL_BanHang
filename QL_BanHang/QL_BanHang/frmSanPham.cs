@@ -52,5 +52,11 @@ namespace QL_BanHang
             sp.ShowDialog();
             dataload();
         }
+
+        private void frmSanPham_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.Equals(Keys.Escape))
+                this.Close();
+        }
     }
 }

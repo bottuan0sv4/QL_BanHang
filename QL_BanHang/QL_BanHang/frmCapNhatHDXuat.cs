@@ -76,10 +76,37 @@ namespace QL_BanHang
                 {
                     MessageBox.Show("Xin hãy nhập dữ liệu!", "Error");
                 }
-                
+
+
             }
             else
             {
+
+                    lstchitiet.Add(new clsCTHDXuat()
+                    {
+                        ID_Kho = (from p in db.Khos
+                                  where cbMaKho.Text == p.makho
+                                  select p.ID_Kho).FirstOrDefault(),
+                        makho = cbMaKho.Text,
+                        tenkho = txt_TenKho.Text,
+                        ID_SP = (from p in db.SanPhams
+                                 where cbMaSP.Text == p.masp
+                                 select p.ID_SP).FirstOrDefault(),
+                        masp = cbMaSP.Text,
+                        tensp = txt_TenSP.Text,
+                        soluong = Convert.ToInt32(txt_SoLuong.EditValue),
+                        dongia = Convert.ToDouble(txt_DonGia.EditValue),
+                        chietkhau = Convert.ToDouble(txt_ChietKhau.EditValue),
+                        thanhtien = ((Convert.ToDouble(txt_DonGia.EditValue) * Convert.ToInt32(txt_SoLuong.EditValue)) - ((Convert.ToDouble(txt_ChietKhau.EditValue) * Convert.ToDouble(txt_DonGia.EditValue) * Convert.ToInt32(txt_SoLuong.EditValue)) / 100)) + (((Convert.ToDouble(txt_DonGia.EditValue) * Convert.ToInt32(txt_SoLuong.EditValue)) - ((Convert.ToDouble(txt_ChietKhau.EditValue) * Convert.ToDouble(txt_DonGia.EditValue) * Convert.ToInt32(txt_SoLuong.EditValue)) / 100)) * Convert.ToDouble(txt_Thue.EditValue) / 100),
+                        masothue = Convert.ToDouble(txt_Thue.EditValue)
+                    });
+                    cbMaKho.ResetText();
+                    cbMaSP.ResetText();
+                    txt_SoLuong.ResetText();
+                    txt_ChietKhau.ResetText();
+                    txt_TenKho.ResetText();
+                    txt_TenSP.ResetText();
+                    txt_DonGia.ResetText();
                 lstchitiet.AddRange(lstSource);
             }
             
@@ -94,19 +121,23 @@ namespace QL_BanHang
 
         private void bt_Luu_HD_Click(object sender, EventArgs e)
         {
-            try
-            {
+            
                 if (themmoi)
                 {
-                    hdx.sophieuxuat = txt_SoPhieuXuat.Text;
-                    hdx.makh = cbMaKH.Text;
-                    hdx.ngaytao = (DateTime)date_NgayTao.DateTime;
-                    var list = (from p in db.KHs
-                                where cbMaKH.Text == p.makh
-                                select p.ID_KH).SingleOrDefault();
-                    hdx.ID_KH = list;
 
-
+                        hdx.sophieuxuat = txt_SoPhieuXuat.Text;
+                        hdx.makh = cbMaKH.Text;
+                        hdx.ngaytao = (DateTime)date_NgayTao.DateTime;
+                        var list = (from p in db.KHs
+                                    where cbMaKH.Text == p.makh
+                                    select p.ID_KH).SingleOrDefault();
+                        hdx.ID_KH = list;
+                if (string.IsNullOrEmpty(hdx.sophieuxuat))
+                {
+                    MessageBox.Show("Hãy nhập dữ liệu!", "Error");
+                }
+                else
+                {
                     foreach (var item in lstchitiet)
                     {
                         CT_HDXuat ct = new CT_HDXuat();
@@ -132,6 +163,8 @@ namespace QL_BanHang
                     db.SubmitChanges();
                     frmHoaDonXuat_Load(sender, e);
                     this.DialogResult = DialogResult.Cancel;
+                }
+
                 }
                 else
                 {
@@ -176,18 +209,9 @@ namespace QL_BanHang
                     db.SubmitChanges();
                     frmHoaDonXuat_Load(sender, e);
                     this.DialogResult = DialogResult.Cancel;
-                    db.SubmitChanges();
-                    frmHoaDonXuat_Load(sender, e);
-                    this.DialogResult = DialogResult.Cancel;
 
                 }
-            }
 
-            catch (Exception)
-            {
-                MessageBox.Show("Xin hãy nhập dữ liệu", "Error");
-            }
-            
         }
 
         private void frmCapNhatHDXuat_Load(object sender, EventArgs e)
@@ -283,15 +307,16 @@ namespace QL_BanHang
             {
 
                 var b = (from ds in lstSource where ds.masp == obj.ToString() select ds).FirstOrDefault();
-                if (b.soluong != null && b.dongia != null && b.chietkhau != null)
+                if (b.soluong != 0 && b.dongia != 0 && b.chietkhau != 0)
                 {
                     if (b != null)
                     {
-                        b.thanhtien = (int.Parse(b.soluong.ToString()) * int.Parse(b.dongia.ToString())) - (int.Parse(b.soluong.ToString()) * int.Parse(b.dongia.ToString()) * int.Parse(b.chietkhau.ToString()) * 0.01) + (int.Parse(b.soluong.ToString()) * int.Parse(b.dongia.ToString()) * int.Parse(b.masothue.ToString()) * 0.01);
+                        b.thanhtien = (int.Parse(b.soluong.ToString()) * int.Parse(b.dongia.ToString())) - (int.Parse(b.soluong.ToString()) * int.Parse(b.dongia.ToString()) * int.Parse(b.chietkhau.ToString()) / 100) + (int.Parse(b.soluong.ToString()) * int.Parse(b.dongia.ToString()) * int.Parse(b.masothue.ToString()) / 100);                        
                         gc_ctHDXuat.DataSource = lstSource;
                     }
 
                 }
+                
             }
         }
 
@@ -302,17 +327,31 @@ namespace QL_BanHang
 
         private void txt_SoLuong_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
 
         private void txt_ChietKhau_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == 8 || e.KeyChar == '.')
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
 
         private void txt_SoLuong_TextChanged(object sender, EventArgs e)
         {
-            long n;
+            /*long n;
             if (long.TryParse(txt_SoLuong.Text, out n))
             {
                 label3.ForeColor = Color.Green;
@@ -322,12 +361,12 @@ namespace QL_BanHang
             {
                 label3.ForeColor = Color.Red;
                 label3.Text = "Error! Vui lòng nhập số!";
-            }
+            }*/
         }
 
         private void txt_Thue_TextChanged(object sender, EventArgs e)
         {
-            double n;
+            /*double n;
             if (double.TryParse(txt_SoPhieuXuat.Text, out n))
             {
                 label1.ForeColor = Color.Green;
@@ -337,12 +376,12 @@ namespace QL_BanHang
             {
                 label1.ForeColor = Color.Red;
                 label1.Text = "Error! Vui lòng nhập số!";
-            }
+            }*/
         }
 
         private void txt_ChietKhau_TextChanged(object sender, EventArgs e)
         {
-            double n;
+            /*double n;
             if (double.TryParse(txt_ChietKhau.Text, out n))
             {
                 label3.ForeColor = Color.Green;
@@ -352,12 +391,12 @@ namespace QL_BanHang
             {
                 label3.ForeColor = Color.Red;
                 label3.Text = "Error! Vui lòng nhập số";
-            }
+            }*/
         }
 
         private void txt_SoPhieuXuat_TextChanged(object sender, EventArgs e)
         {
-            long n;
+            /*long n;
             if (long.TryParse(txt_SoPhieuXuat.Text, out n))
             {
                 label1.ForeColor = Color.Green;
@@ -367,7 +406,30 @@ namespace QL_BanHang
             {
                 label1.ForeColor = Color.Red;
                 label1.Text = "Error! Vui lòng nhập số!";
+            }*/
+        }
+
+        private void sidePanel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_SoPhieuXuat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == 8)
+            {
+                e.Handled = false;
             }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void frmCapNhatHDXuat_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.Equals(Keys.Escape))
+                this.Close();
         }
     }
 }

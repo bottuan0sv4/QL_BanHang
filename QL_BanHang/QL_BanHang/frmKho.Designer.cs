@@ -171,6 +171,8 @@ namespace QL_BanHang
             this.gv_Kho.GridControl = this.gc_Kho;
             this.gv_Kho.Name = "gv_Kho";
             this.gv_Kho.OptionsBehavior.Editable = false;
+            this.gv_Kho.OptionsView.ShowAutoFilterRow = true;
+            this.gv_Kho.OptionsView.ShowDetailButtons = false;
             this.gv_Kho.OptionsView.ShowGroupPanel = false;
             // 
             // gc_IDKho
@@ -193,7 +195,7 @@ namespace QL_BanHang
             // 
             // gridColumn1
             // 
-            this.gridColumn1.Caption = "Mã Kho";
+            this.gridColumn1.Caption = "Mã Kho *";
             this.gridColumn1.FieldName = "makho";
             this.gridColumn1.MinWidth = 27;
             this.gridColumn1.Name = "gridColumn1";
@@ -211,11 +213,13 @@ namespace QL_BanHang
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmKho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Kho";
             this.Load += new System.EventHandler(this.frmKho_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmKho_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Kho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Kho)).EndInit();

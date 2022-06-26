@@ -157,6 +157,8 @@ namespace QL_BanHang
             this.gv_Nhacc.GridControl = this.gc_Nhacc;
             this.gv_Nhacc.Name = "gv_Nhacc";
             this.gv_Nhacc.OptionsBehavior.Editable = false;
+            this.gv_Nhacc.OptionsView.ShowAutoFilterRow = true;
+            this.gv_Nhacc.OptionsView.ShowDetailButtons = false;
             this.gv_Nhacc.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn1
@@ -169,7 +171,7 @@ namespace QL_BanHang
             // 
             // gridColumn2
             // 
-            this.gridColumn2.Caption = "Mã Nhà Cung Cấp";
+            this.gridColumn2.Caption = "Mã Nhà Cung Cấp *";
             this.gridColumn2.FieldName = "mancc";
             this.gridColumn2.MinWidth = 25;
             this.gridColumn2.Name = "gridColumn2";
@@ -217,10 +219,12 @@ namespace QL_BanHang
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.KeyPreview = true;
             this.Name = "frmNhaCC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Nhà Cung Cấp";
             this.Load += new System.EventHandler(this.frmNhaCC_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmNhaCC_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc_Nhacc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_Nhacc)).EndInit();

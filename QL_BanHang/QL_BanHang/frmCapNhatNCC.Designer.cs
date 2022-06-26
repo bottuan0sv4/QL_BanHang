@@ -38,8 +38,7 @@ namespace QL_BanHang
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.txt_MaNCC = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.bt_CapNhat = new DevExpress.XtraEditors.SimpleButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.bt_XacNhan = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenNCC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_SDT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_DiaChi.Properties)).BeginInit();
@@ -49,7 +48,7 @@ namespace QL_BanHang
             // bt_Huy
             // 
             this.bt_Huy.ImageOptions.SvgImage = global::QL_BanHang.Properties.Resources.paymentunpaid;
-            this.bt_Huy.Location = new System.Drawing.Point(680, 96);
+            this.bt_Huy.Location = new System.Drawing.Point(680, 72);
             this.bt_Huy.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Huy.Name = "bt_Huy";
             this.bt_Huy.Size = new System.Drawing.Size(125, 46);
@@ -59,7 +58,7 @@ namespace QL_BanHang
             // 
             // txt_TenNCC
             // 
-            this.txt_TenNCC.Location = new System.Drawing.Point(135, 42);
+            this.txt_TenNCC.Location = new System.Drawing.Point(140, 42);
             this.txt_TenNCC.Margin = new System.Windows.Forms.Padding(4);
             this.txt_TenNCC.Name = "txt_TenNCC";
             this.txt_TenNCC.Size = new System.Drawing.Size(229, 22);
@@ -67,7 +66,7 @@ namespace QL_BanHang
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(13, 45);
+            this.labelControl7.Location = new System.Drawing.Point(13, 46);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(116, 17);
@@ -112,7 +111,7 @@ namespace QL_BanHang
             // 
             // txt_MaNCC
             // 
-            this.txt_MaNCC.Location = new System.Drawing.Point(135, 10);
+            this.txt_MaNCC.Location = new System.Drawing.Point(140, 10);
             this.txt_MaNCC.Margin = new System.Windows.Forms.Padding(4);
             this.txt_MaNCC.Name = "txt_MaNCC";
             this.txt_MaNCC.Size = new System.Drawing.Size(229, 22);
@@ -120,53 +119,47 @@ namespace QL_BanHang
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(13, 13);
+            this.labelControl1.Location = new System.Drawing.Point(13, 14);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(110, 17);
+            this.labelControl1.Size = new System.Drawing.Size(122, 17);
             this.labelControl1.TabIndex = 38;
-            this.labelControl1.Text = "Mã Nhà Cung Cấp";
+            this.labelControl1.Text = "Mã Nhà Cung Cấp *";
             // 
-            // bt_CapNhat
+            // bt_XacNhan
             // 
-            this.bt_CapNhat.ImageOptions.SvgImage = global::QL_BanHang.Properties.Resources.refreshallpivottable;
-            this.bt_CapNhat.Location = new System.Drawing.Point(547, 96);
-            this.bt_CapNhat.Margin = new System.Windows.Forms.Padding(4);
-            this.bt_CapNhat.Name = "bt_CapNhat";
-            this.bt_CapNhat.Size = new System.Drawing.Size(125, 46);
-            this.bt_CapNhat.TabIndex = 46;
-            this.bt_CapNhat.Text = "Cập Nhật";
-            this.bt_CapNhat.Click += new System.EventHandler(this.bt_CapNhat_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 125);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 17);
-            this.label1.TabIndex = 51;
+            this.bt_XacNhan.ImageOptions.Image = global::QL_BanHang.Properties.Resources.apply_32x32;
+            this.bt_XacNhan.Location = new System.Drawing.Point(507, 72);
+            this.bt_XacNhan.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_XacNhan.Name = "bt_XacNhan";
+            this.bt_XacNhan.Size = new System.Drawing.Size(125, 46);
+            this.bt_XacNhan.TabIndex = 46;
+            this.bt_XacNhan.Text = "Xác Nhận";
+            this.bt_XacNhan.Click += new System.EventHandler(this.bt_XacNhan_Click);
             // 
             // frmCapNhatNCC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 154);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(820, 128);
             this.Controls.Add(this.bt_Huy);
             this.Controls.Add(this.txt_TenNCC);
             this.Controls.Add(this.labelControl7);
-            this.Controls.Add(this.bt_CapNhat);
+            this.Controls.Add(this.bt_XacNhan);
             this.Controls.Add(this.txt_SDT);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.txt_DiaChi);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.txt_MaNCC);
             this.Controls.Add(this.labelControl1);
+            this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "frmCapNhatNCC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cập Nhật Nhà Cung Cấp";
             this.Load += new System.EventHandler(this.frmCapNhatNCC_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCapNhatNCC_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenNCC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_SDT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_DiaChi.Properties)).EndInit();
@@ -180,13 +173,12 @@ namespace QL_BanHang
         private DevExpress.XtraEditors.SimpleButton bt_Huy;
         private DevExpress.XtraEditors.TextEdit txt_TenNCC;
         private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.SimpleButton bt_CapNhat;
+        private DevExpress.XtraEditors.SimpleButton bt_XacNhan;
         private DevExpress.XtraEditors.TextEdit txt_SDT;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.TextEdit txt_DiaChi;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit txt_MaNCC;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private System.Windows.Forms.Label label1;
     }
 }

@@ -42,8 +42,7 @@ namespace QL_BanHang
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txt_MSThue = new DevExpress.XtraEditors.TextEdit();
             this.bt_Huy = new DevExpress.XtraEditors.SimpleButton();
-            this.bt_CapNhat = new DevExpress.XtraEditors.SimpleButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.bt_Xacnhan = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenKH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_GioiTinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_SDT.Properties)).BeginInit();
@@ -144,9 +143,9 @@ namespace QL_BanHang
             this.labelControl1.Location = new System.Drawing.Point(21, 18);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(88, 16);
+            this.labelControl1.Size = new System.Drawing.Size(100, 16);
             this.labelControl1.TabIndex = 21;
-            this.labelControl1.Text = "Mã Khách Hàng";
+            this.labelControl1.Text = "Mã Khách Hàng *";
             // 
             // txt_MSThue
             // 
@@ -161,7 +160,7 @@ namespace QL_BanHang
             // bt_Huy
             // 
             this.bt_Huy.ImageOptions.SvgImage = global::QL_BanHang.Properties.Resources.paymentunpaid;
-            this.bt_Huy.Location = new System.Drawing.Point(688, 144);
+            this.bt_Huy.Location = new System.Drawing.Point(688, 116);
             this.bt_Huy.Margin = new System.Windows.Forms.Padding(4);
             this.bt_Huy.Name = "bt_Huy";
             this.bt_Huy.Size = new System.Drawing.Size(125, 46);
@@ -169,37 +168,28 @@ namespace QL_BanHang
             this.bt_Huy.Text = "Hủy";
             this.bt_Huy.Click += new System.EventHandler(this.bt_ClickHuy);
             // 
-            // bt_CapNhat
+            // bt_Xacnhan
             // 
-            this.bt_CapNhat.ImageOptions.SvgImage = global::QL_BanHang.Properties.Resources.refreshallpivottable;
-            this.bt_CapNhat.Location = new System.Drawing.Point(555, 144);
-            this.bt_CapNhat.Margin = new System.Windows.Forms.Padding(4);
-            this.bt_CapNhat.Name = "bt_CapNhat";
-            this.bt_CapNhat.Size = new System.Drawing.Size(125, 46);
-            this.bt_CapNhat.TabIndex = 31;
-            this.bt_CapNhat.Text = "Cập Nhật";
-            this.bt_CapNhat.Click += new System.EventHandler(this.bt_ClickCapNhat);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 173);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 17);
-            this.label1.TabIndex = 38;
+            this.bt_Xacnhan.ImageOptions.Image = global::QL_BanHang.Properties.Resources.apply_32x32;
+            this.bt_Xacnhan.Location = new System.Drawing.Point(517, 116);
+            this.bt_Xacnhan.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_Xacnhan.Name = "bt_Xacnhan";
+            this.bt_Xacnhan.Size = new System.Drawing.Size(125, 46);
+            this.bt_Xacnhan.TabIndex = 31;
+            this.bt_Xacnhan.Text = "Xác Nhận";
+            this.bt_Xacnhan.Click += new System.EventHandler(this.bt_ClickXacNhan);
             // 
             // frmCapNhatKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 199);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(824, 172);
             this.Controls.Add(this.txt_MSThue);
             this.Controls.Add(this.bt_Huy);
             this.Controls.Add(this.txt_TenKH);
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.txt_GioiTinh);
-            this.Controls.Add(this.bt_CapNhat);
+            this.Controls.Add(this.bt_Xacnhan);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.txt_SDT);
             this.Controls.Add(this.labelControl5);
@@ -208,12 +198,14 @@ namespace QL_BanHang
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.txt_MaKH);
             this.Controls.Add(this.labelControl1);
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "frmCapNhatKhachHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cập Nhật Khách Hàng";
             this.Load += new System.EventHandler(this.frmCapNhatKhachHang_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCapNhatKhachHang_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenKH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_GioiTinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_SDT.Properties)).EndInit();
@@ -231,7 +223,7 @@ namespace QL_BanHang
         private DevExpress.XtraEditors.TextEdit txt_TenKH;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.TextEdit txt_GioiTinh;
-        private DevExpress.XtraEditors.SimpleButton bt_CapNhat;
+        private DevExpress.XtraEditors.SimpleButton bt_Xacnhan;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.TextEdit txt_SDT;
         private DevExpress.XtraEditors.LabelControl labelControl5;
@@ -241,6 +233,5 @@ namespace QL_BanHang
         private DevExpress.XtraEditors.TextEdit txt_MaKH;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txt_MSThue;
-        private System.Windows.Forms.Label label1;
     }
 }

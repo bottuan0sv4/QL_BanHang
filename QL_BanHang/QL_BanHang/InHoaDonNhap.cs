@@ -1,9 +1,4 @@
-﻿using DevExpress.XtraReports.UI;
-using System;
-using System.Collections;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
+﻿using System.Linq;
 using System.Data;
 using QL_BanHang.Class;
 
@@ -32,7 +27,9 @@ namespace QL_BanHang
             txt_mancc.Text = obj.mancc;
             txt_sdt.Text = obj.sdt;
             txt_ngaytao.Text = obj.ngaytao.ToString("dd/MM/yyyy");
-
+            txt_NgayLap.Text = obj.ngaytao.ToString("dd");
+            txt_ThangLap.Text = obj.ngaytao.ToString("MM");
+            txt_NamLap.Text = obj.ngaytao.ToString("yyyy");
         }
         public InHoaDonNhap()
         {

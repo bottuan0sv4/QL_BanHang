@@ -562,8 +562,6 @@ namespace QL_BanHang
 		
 		private int _soluong;
 		
-		private System.DateTime _nam;
-		
 		private EntityRef<Kho> _Kho;
 		
 		private EntityRef<SanPham> _SanPham;
@@ -578,8 +576,6 @@ namespace QL_BanHang
     partial void OnID_SPChanged();
     partial void OnsoluongChanging(int value);
     partial void OnsoluongChanged();
-    partial void OnnamChanging(System.DateTime value);
-    partial void OnnamChanged();
     #endregion
 		
 		public TonKho()
@@ -653,26 +649,6 @@ namespace QL_BanHang
 					this._soluong = value;
 					this.SendPropertyChanged("soluong");
 					this.OnsoluongChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nam", DbType="Date NOT NULL")]
-		public System.DateTime nam
-		{
-			get
-			{
-				return this._nam;
-			}
-			set
-			{
-				if ((this._nam != value))
-				{
-					this.OnnamChanging(value);
-					this.SendPropertyChanging();
-					this._nam = value;
-					this.SendPropertyChanged("nam");
-					this.OnnamChanged();
 				}
 			}
 		}

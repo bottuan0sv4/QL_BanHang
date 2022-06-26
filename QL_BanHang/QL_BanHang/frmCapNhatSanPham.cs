@@ -28,58 +28,6 @@ namespace QL_BanHang
         {
 
         }
-        private void bt_CapNhat_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (themmoi)
-                {
-                    sp.masp = txt_MaSP.Text;
-                    sp.tensp = txt_TenSP.Text;
-                    sp.donvi = txt_DonVi.Text;
-                    sp.dongia = Convert.ToDouble(txt_DonGia.EditValue);
-                    sp.ngaytao = date_NgayTao.DateTime;
-
-                    db.SanPhams.InsertOnSubmit(sp);
-                    db.SubmitChanges();
-                    frmSanPham_Load(sender, e);
-                    this.DialogResult = DialogResult.Cancel;
-                }
-                else
-                {
-                    if (xoa)
-                    {
-                        sp = db.SanPhams.Where(s => s.masp == txt_MaSP.Text).FirstOrDefault();
-                        sp.tensp = txt_TenSP.Text;
-                        sp.donvi = txt_DonVi.Text;
-                        sp.dongia = Convert.ToDouble(txt_DonGia.EditValue);
-                        sp.ngaytao = date_NgayTao.DateTime;
-
-                        db.SanPhams.DeleteOnSubmit(sp);
-                        db.SubmitChanges();
-                        frmSanPham_Load(sender, e);
-                        this.DialogResult = DialogResult.Cancel;
-                    }
-                    else
-                    {
-                        sp = db.SanPhams.Where(s => s.masp == txt_MaSP.Text).FirstOrDefault();
-                        sp.tensp = txt_TenSP.Text;
-                        sp.donvi = txt_DonVi.Text;
-                        sp.dongia = Convert.ToDouble(txt_DonGia.EditValue);
-                        sp.ngaytao = date_NgayTao.DateTime;
-
-                        db.SubmitChanges();
-                        frmSanPham_Load(sender, e);
-                        this.DialogResult = DialogResult.Cancel;
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Xin hãy nhập dữ liệu!", "Error");
-            }
-            
-        }
 
         private void bt_Huy_Click(object sender, EventArgs e)
         {
@@ -109,12 +57,19 @@ namespace QL_BanHang
 
         private void txt_DonGia_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
 
         private void txt_DonGia_TextChanged(object sender, EventArgs e)
         {
-            long n;
+            /*long n;
             if (long.TryParse(txt_DonGia.Text, out n))
             {
                 label1.ForeColor = Color.Green;
@@ -124,7 +79,66 @@ namespace QL_BanHang
             {
                 label1.ForeColor = Color.Red;
                 label1.Text = "Error! Vui lòng nhập số";
-            }
+            }*/
+        }
+
+        private void bt_XacNhan_Click(object sender, EventArgs e)
+        {
+                if (themmoi)
+                {
+                    sp.masp = txt_MaSP.Text;
+                    sp.tensp = txt_TenSP.Text;
+                    sp.donvi = txt_DonVi.Text;
+                    sp.dongia = Convert.ToDouble(txt_DonGia.EditValue);
+                    sp.ngaytao = date_NgayTao.DateTime;
+                if (string.IsNullOrEmpty(sp.masp))
+                {
+                    MessageBox.Show("Hãy nhập dữ liệu!", "Error");
+                }
+                else {
+                    db.SanPhams.InsertOnSubmit(sp);
+                    db.SubmitChanges();
+                    frmSanPham_Load(sender, e);
+                    this.DialogResult = DialogResult.Cancel;
+                }
+                    
+                
+                }
+                else
+                {
+                    if (xoa)
+                    {
+                        sp = db.SanPhams.Where(s => s.masp == txt_MaSP.Text).FirstOrDefault();
+                        sp.tensp = txt_TenSP.Text;
+                        sp.donvi = txt_DonVi.Text;
+                        sp.dongia = Convert.ToDouble(txt_DonGia.EditValue);
+                        sp.ngaytao = date_NgayTao.DateTime;
+
+                        db.SanPhams.DeleteOnSubmit(sp);
+                        db.SubmitChanges();
+                        frmSanPham_Load(sender, e);
+                        this.DialogResult = DialogResult.Cancel;
+                    }
+                    else
+                    {
+                        sp = db.SanPhams.Where(s => s.masp == txt_MaSP.Text).FirstOrDefault();
+                        sp.tensp = txt_TenSP.Text;
+                        sp.donvi = txt_DonVi.Text;
+                        sp.dongia = Convert.ToDouble(txt_DonGia.EditValue);
+                        sp.ngaytao = date_NgayTao.DateTime;
+
+                        db.SubmitChanges();
+                        frmSanPham_Load(sender, e);
+                        this.DialogResult = DialogResult.Cancel;
+                    }
+                }
+                
+        }
+
+        private void frmCapNhatSanPham_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.Equals(Keys.Escape))
+                this.Close();
         }
     }
 }

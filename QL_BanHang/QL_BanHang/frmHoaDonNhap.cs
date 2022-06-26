@@ -34,10 +34,6 @@ namespace QL_BanHang
             gc_HDNhap.DataSource = list;
             gc_HDNhap.RefreshDataSource();
         }
-        private void loaddataCTHDN()
-        {
-
-        }
 
         private void frmHoaDonNhap_Load(object sender, EventArgs e)
         {
@@ -156,6 +152,12 @@ namespace QL_BanHang
 
             prt.DataSource = listCT_HDNhaps.ToList();
             prt.ShowPreview(); 
+        }
+
+        private void frmHoaDonNhap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.Equals(Keys.Escape))
+                this.Close();
         }
     }
 }

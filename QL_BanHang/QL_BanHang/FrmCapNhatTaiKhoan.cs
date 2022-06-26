@@ -33,10 +33,69 @@ namespace QL_BanHang
 
         private void bt_CapNhat_Click(object sender, EventArgs e)
         {
-            try
+                
+        }
+            
+            
+            
+    
+
+        private void FrmCapNhatTaiKhoan_Load(object sender, EventArgs e)
+        {
+            if (Themmoi)
             {
+
+            }else
+            {
+                txt_Username.Text = taiKhoan.username;
+                txt_Pass.Text = taiKhoan.password;
+                txt_HoTen.Text = taiKhoan.hoten;
+                txtDiaChi.Text = taiKhoan.diachi;
+                txtSDT.Text = taiKhoan.sdt;
+                date_NgaySinh.DateTime = (DateTime)taiKhoan.ngaysinh;
+                txt_GioiTinh.Text = taiKhoan.gioitinh;
+
+            }
+        }
+
+        private void bt_Huy_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == '+' || e.KeyChar == '(' || e.KeyChar == ')' || e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtSDT_TextChanged(object sender, EventArgs e)
+        {
+            /*long n;
+            if (long.TryParse(txtSDT.Text, out n))
+            {
+                label1.ForeColor = Color.Green;
+                label1.Text = "Successful!";
+            }
+            else
+            {
+                label1.ForeColor = Color.Red;
+                label1.Text = "Error! Vui lòng nhập số!";
+            }*/
+        }
+
+        private void bt_XacNhan_Click(object sender, EventArgs e)
+        {
+            
                 if (Themmoi)
                 {
+                    
                     tk.username = txt_Username.Text;
                     tk.password = txt_Pass.Text;
                     tk.hoten = txt_HoTen.Text;
@@ -44,12 +103,19 @@ namespace QL_BanHang
                     tk.diachi = txtDiaChi.Text;
                     tk.sdt = txtSDT.Text;
                     tk.gioitinh = txt_GioiTinh.Text;
+                    if (string.IsNullOrEmpty(tk.username)) 
+                    {
+                        MessageBox.Show("Xin hãy nhập dữ liệu!", "Error");
+                    }
+                    else
+                    {
+                        db.TaiKhoans.InsertOnSubmit(tk);
+                        db.SubmitChanges();
+                        FrmTaiKhoan_Load(sender, e);
+                        this.DialogResult = DialogResult.OK;
+                    }
+                   
 
-                    db.TaiKhoans.InsertOnSubmit(tk);
-                    db.SubmitChanges();
-                    FrmTaiKhoan_Load(sender, e);
-
-                    this.DialogResult = DialogResult.Cancel;
                 }
                 else
                 {
@@ -81,56 +147,13 @@ namespace QL_BanHang
                         this.DialogResult = DialogResult.Cancel;
                     }
                 }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Xin hãy nhập dữ liệu!", "Error");
-            }
-            
-            
+
         }
 
-        private void FrmCapNhatTaiKhoan_Load(object sender, EventArgs e)
+        private void FrmCapNhatTaiKhoan_KeyDown(object sender, KeyEventArgs e)
         {
-            if (Themmoi)
-            {
-
-            }else
-            {
-                txt_Username.Text = taiKhoan.username;
-                txt_Pass.Text = taiKhoan.password;
-                txt_HoTen.Text = taiKhoan.hoten;
-                txtDiaChi.Text = taiKhoan.diachi;
-                txtSDT.Text = taiKhoan.sdt;
-                date_NgaySinh.DateTime = (DateTime)taiKhoan.ngaysinh;
-                txt_GioiTinh.Text = taiKhoan.gioitinh;
-
-            }
-        }
-
-        private void bt_Huy_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-        }
-
-        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
-        {
-           
-        }
-
-        private void txtSDT_TextChanged(object sender, EventArgs e)
-        {
-            long n;
-            if (long.TryParse(txtSDT.Text, out n))
-            {
-                label1.ForeColor = Color.Green;
-                label1.Text = "Successful!";
-            }
-            else
-            {
-                label1.ForeColor = Color.Red;
-                label1.Text = "Error! Vui lòng nhập số!";
-            }
+            if (e.KeyCode.Equals(Keys.Escape))
+                this.Close();
         }
     }
 }

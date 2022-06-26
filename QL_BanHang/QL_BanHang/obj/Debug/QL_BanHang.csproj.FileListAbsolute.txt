@@ -712,5 +712,6 @@ D:\Workplace\VStudio\QL_BanHang\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.frmTo
 D:\Workplace\VStudio\QL_BanHang\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.frmTrangChu.resources
 D:\Workplace\VStudio\QL_BanHang\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.InHoaDonXuat.resources
 D:\Workplace\VStudio\QL_BanHang\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.InHoaDonNhap.resources
-D:\Workplace\VStudio\QL_BanHang\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.csproj.AssemblyReference.cache
 D:\Workplace\VStudio\QL_BanHang\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.frmLogin.resources
+D:\Workplace\VStudio\QL_BanHang\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.csproj.AssemblyReference.cache
+D:\Workplace\VStudio\QL_BanHang\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.rptBangTongHopLuongSXKD.resources

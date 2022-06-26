@@ -122,5 +122,11 @@ namespace QL_BanHang
             prt.DataSource = listCT_HDNhaps.ToList();
             prt.ShowPreview();
         }
+
+        private void frmHoaDonXuat_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.Equals(Keys.Escape))
+                this.Close();
+        }
     }    
 }
