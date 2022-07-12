@@ -26,17 +26,6 @@ namespace QL_BanHang.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-JKQLGEH\\SQLEXPRESS;Initial Catalog=QL_BanHang;Integrated Secu" +
-            "rity=True")]
-        public string QL_BanHangConnectionString {
-            get {
-                return ((string)(this["QL_BanHangConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=BOTTUAN0SV4\\SQLEXPRESS;Initial Catalog=QLy_BanHang;Integrated Securit" +
             "y=True")]
         public string QLy_BanHangConnectionString {
@@ -62,6 +51,28 @@ namespace QL_BanHang.Properties {
         public string QLy_BanHangConnectionString2 {
             get {
                 return ((string)(this["QLy_BanHangConnectionString2"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-JKQLGEH\\SQLEXPRESS;Initial Catalog=QL_BanHang;Integrated Secu" +
+            "rity=True")]
+        public string QL_BanHangConnectionString {
+            get {
+                return ((string)(this["QL_BanHangConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-1N9EL1I\\SQLEXPRESS;Initial Catalog=QLy_BanHang;Integrated Sec" +
+            "urity=True")]
+        public string QLy_BanHangConnectionString3 {
+            get {
+                return ((string)(this["QLy_BanHangConnectionString3"]));
             }
         }
     }

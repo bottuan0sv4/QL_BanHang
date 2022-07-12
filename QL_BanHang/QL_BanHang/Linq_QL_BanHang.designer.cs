@@ -63,7 +63,7 @@ namespace QL_BanHang
     #endregion
 		
 		public Linq_QL_BanHangDataContext() : 
-				base(global::QL_BanHang.Properties.Settings.Default.QLy_BanHangConnectionString2, mappingSource)
+				base(global::QL_BanHang.Properties.Settings.Default.QLy_BanHangConnectionString3, mappingSource)
 		{
 			OnCreated();
 		}
